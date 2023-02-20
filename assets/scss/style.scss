@@ -1,0 +1,24 @@
+@import "variable";
+@import "font";
+@import "mixin";
+body{
+    @include font($fontJost);
+}
+.top1{
+    background-color: rgb(218, 63, 63);
+    color: white;
+    >div{
+        height: 40px;
+        div:last-of-type{
+            :hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+.top2{
+    border-bottom: 1px solid lightgray;
+    >div{
+        height: 40px;
+    }
+}

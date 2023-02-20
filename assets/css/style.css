@@ -1,0 +1,21 @@
+body {
+  font-family: "Jost";
+}
+
+.top1 {
+  background-color: rgb(218, 63, 63);
+  color: white;
+}
+.top1 > div {
+  height: 40px;
+}
+.top1 > div div:last-of-type :hover {
+  cursor: pointer;
+}
+
+.top2 {
+  border-bottom: 1px solid lightgray;
+}
+.top2 > div {
+  height: 40px;
+}/*# sourceMappingURL=style.css.map */
