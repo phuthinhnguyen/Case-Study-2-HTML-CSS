@@ -22,3 +22,11 @@ body{
         height: 40px;
     }
 }
+@media screen and (max-width:1400px){
+    .top2{
+        .col-sm-4:first-of-type{
+            display: none;
+        }
+        
+}
+}
