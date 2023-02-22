@@ -24,26 +24,23 @@ body {
 .top2 {
   border-bottom: 1px solid lightgray;
 }
-.top2 > div {
-  height: 40px;
-}
 .top2 > div > div {
-  height: 40px;
-}
-.top2 .row > div {
   line-height: 40px;
+}
+.top2 > div #sdf {
+  text-align: center;
 }
 
 @media screen and (max-width: 1200px) {
   .top2 .col-sm-4:first-of-type {
     display: none;
   }
+  .top2 .row #sdf {
+    text-align: left;
+  }
 }
 @media screen and (max-width: 992px) {
   .top2 {
     display: none;
-  }
-  .top2 .row .text-center {
-    text-align: left;
   }
 }/*# sourceMappingURL=style.css.map */

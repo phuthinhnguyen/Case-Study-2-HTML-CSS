@@ -27,37 +27,29 @@ body{
 .top2{
     border-bottom: 1px solid lightgray;
     >div{
-        height: 40px;
-        >div{
-            height: 40px;
-        }
-        >div{
-            
-        }
-    }
-    .row{
         >div{
             line-height: 40px;
+        }  
+        #sdf{
+            text-align: center;
         }
     }
-   
 }
 @media screen and (max-width:1200px){
     .top2{
         .col-sm-4:first-of-type{
             display: none;
         }
+        .row{
+            #sdf{
+                text-align: left;
+            }
+        }
    
 }
 }
 @media screen and (max-width:992px){
     .top2{
-        display: none;
-        .row{
-            .text-center{
-                text-align: left;
-            }
-
-        }
+        display: none;     
 }
 }
