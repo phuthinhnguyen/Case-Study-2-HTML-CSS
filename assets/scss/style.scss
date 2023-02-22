@@ -9,24 +9,55 @@ body{
     color: white;
     >div{
         height: 40px;
+        position: relative;
         div:last-of-type{
             :hover{
                 cursor: pointer;
             }
         }
     }
+    .top1-close{
+        position: absolute;
+        right: 5px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
 }
 .top2{
     border-bottom: 1px solid lightgray;
     >div{
         height: 40px;
+        >div{
+            height: 40px;
+        }
+        >div{
+            
+        }
     }
+    .row{
+        >div{
+            line-height: 40px;
+        }
+    }
+   
 }
-@media screen and (max-width:1400px){
+@media screen and (max-width:1200px){
     .top2{
         .col-sm-4:first-of-type{
             display: none;
         }
-        
+   
+}
+}
+@media screen and (max-width:992px){
+    .top2{
+        display: none;
+        .row{
+            .text-center{
+                text-align: left;
+            }
+
+        }
 }
 }
