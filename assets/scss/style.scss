@@ -3,6 +3,9 @@
 @import "mixin";
 body{
     @include font($fontJost);
+    a{
+        @include link-decoration();
+    }
 }
 .top1{
     background-color: rgb(218, 63, 63);
@@ -20,35 +23,84 @@ body{
         position: absolute;
         right: 5px;
         width: 40px;
-        height: 40px;
         line-height: 40px;
     }
 }
 .top2{
     border-bottom: 1px solid lightgray;
-    >div{
+    .row{
+        padding: 0 50px;
         >div{
             line-height: 40px;
-        }  
-        #sdf{
+        } 
+        .col-md-10{
             text-align: center;
-        }
+        } 
     }
 }
-@media screen and (max-width:1200px){
-    .top2{
-        .col-sm-4:first-of-type{
-            display: none;
-        }
-        .row{
-            #sdf{
-                text-align: left;
+@keyframes navleft {
+    0%{width: 0;}
+    100%{width: 130%;}
+  }
+nav{
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: white;
+    padding: 0 20px;
+    .row{
+        height: 70px;
+        .col-xxl-4{
+            ul{
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+            li{
+                float: left;
+                margin-left: 60px;
+                >a{
+                    position: relative;
+                    font-weight: 500;
+                    i{
+                        margin-left: 5px;
+                        font-size: 9px;
+                        top: 30%;
+                        position: absolute;
+                    }
+                    :hover::after{
+                        height: 2px;
+                        animation: navleft 0.3s ;
+                        background-color: black;
+                        display: block;
+                        width: 130%;
+                        content: "";
+                    }
+                }
+            }
+            li:first-child{
+                margin-left: 0;
             }
         }
-   
+    }
+    
+
+}
+
+@media screen and (max-width:1400px){
+    .top2{
+        .row{
+            .col-xxl-4:first-of-type{
+                display: none;
+            }
+            .col-md-10{
+                text-align: left;
+            }   
+        }
+        
 }
 }
-@media screen and (max-width:992px){
+@media screen and (max-width:768px){
     .top2{
         display: none;     
 }

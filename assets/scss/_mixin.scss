@@ -3,3 +3,7 @@
     align-items: center;
     justify-content: center;
 }
+@mixin link-decoration{
+    text-decoration: none;
+    color: black;
+}

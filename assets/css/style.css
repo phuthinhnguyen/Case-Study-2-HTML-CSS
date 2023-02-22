@@ -1,6 +1,10 @@
 body {
   font-family: "Jost";
 }
+body a {
+  text-decoration: none;
+  color: black;
+}
 
 .top1 {
   background-color: rgb(218, 63, 63);
@@ -17,29 +21,80 @@ body {
   position: absolute;
   right: 5px;
   width: 40px;
-  height: 40px;
   line-height: 40px;
 }
 
 .top2 {
   border-bottom: 1px solid lightgray;
 }
-.top2 > div > div {
+.top2 .row {
+  padding: 0 50px;
+}
+.top2 .row > div {
   line-height: 40px;
 }
-.top2 > div #sdf {
+.top2 .row .col-md-10 {
   text-align: center;
 }
 
-@media screen and (max-width: 1200px) {
-  .top2 .col-sm-4:first-of-type {
+@keyframes navleft {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 130%;
+  }
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: white;
+  padding: 0 20px;
+}
+nav .row {
+  height: 70px;
+}
+nav .row .col-xxl-4 ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+nav .row .col-xxl-4 li {
+  float: left;
+  margin-left: 60px;
+}
+nav .row .col-xxl-4 li > a {
+  position: relative;
+  font-weight: 500;
+}
+nav .row .col-xxl-4 li > a i {
+  margin-left: 5px;
+  font-size: 9px;
+  top: 30%;
+  position: absolute;
+}
+nav .row .col-xxl-4 li > a :hover::after {
+  height: 2px;
+  animation: navleft 0.3s;
+  background-color: black;
+  display: block;
+  width: 130%;
+  content: "";
+}
+nav .row .col-xxl-4 li:first-child {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 1400px) {
+  .top2 .row .col-xxl-4:first-of-type {
     display: none;
   }
-  .top2 .row #sdf {
+  .top2 .row .col-md-10 {
     text-align: left;
   }
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
   .top2 {
     display: none;
   }
