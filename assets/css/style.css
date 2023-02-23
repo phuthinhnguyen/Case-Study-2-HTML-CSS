@@ -1,12 +1,13 @@
-body {
-  font-family: "Jost";
-}
 body a {
   text-decoration: none;
   color: black;
 }
+body a :hover {
+  color: lightgray;
+}
 
 .top1 {
+  font-family: "Jost";
   background-color: rgb(218, 63, 63);
   color: white;
 }
@@ -14,7 +15,7 @@ body a {
   height: 40px;
   position: relative;
 }
-.top1 > div div:last-of-type :hover {
+.top1 > div div:last-of-type:hover {
   cursor: pointer;
 }
 .top1 .top1-close {
@@ -25,10 +26,13 @@ body a {
 }
 
 .top2 {
+  font-family: "Jost";
   border-bottom: 1px solid lightgray;
 }
 .top2 .row {
-  padding: 0 50px;
+  padding: 0 20px;
+  max-width: 1680px;
+  margin: auto;
 }
 .top2 .row > div {
   line-height: 40px;
@@ -46,6 +50,7 @@ body a {
   }
 }
 nav {
+  font-family: "Jost";
   position: sticky;
   top: 0;
   z-index: 2;
@@ -54,6 +59,9 @@ nav {
 }
 nav .row {
   height: 70px;
+  padding: 0 20px;
+  max-width: 1680px;
+  margin: auto;
 }
 nav .row .col-xxl-4 ul {
   list-style-type: none;
@@ -74,7 +82,7 @@ nav .row .col-xxl-4 li > a i {
   top: 30%;
   position: absolute;
 }
-nav .row .col-xxl-4 li > a :hover::after {
+nav .row .col-xxl-4 li > a:hover::after {
   height: 2px;
   animation: navleft 0.3s;
   background-color: black;
@@ -84,6 +92,339 @@ nav .row .col-xxl-4 li > a :hover::after {
 }
 nav .row .col-xxl-4 li:first-child {
   margin-left: 0;
+}
+
+@keyframes imgwrap {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes imgtextp {
+  0% {
+    top: 30%;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes imgtexth1 {
+  0% {
+    top: 70%;
+  }
+  100% {
+    top: 10%;
+  }
+}
+@keyframes imgtexta {
+  0% {
+    top: 150%;
+  }
+  100% {
+    top: 90%;
+  }
+}
+@keyframes imgtextrecotton {
+  0% {
+    left: 70%;
+  }
+  100% {
+    left: 80%;
+  }
+}
+.img {
+  position: relative;
+  font-family: "Jost";
+}
+
+.img-wrap {
+  position: relative;
+  animation: imgwrap 2s;
+}
+.img-wrap img {
+  width: 100%;
+  height: auto;
+}
+
+.img-nav {
+  position: absolute;
+  right: 1%;
+  height: 100px;
+  width: 20px;
+  z-index: 1;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.img-nav a {
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-top: 20px;
+  background-color: black;
+  margin-left: auto;
+  margin-right: auto;
+}
+.img-nav a:first-of-type {
+  background-color: white;
+  border: 1px solid black;
+  width: 14px;
+  height: 14px;
+}
+
+.img-text {
+  position: absolute;
+  height: 40%;
+  left: 10%;
+  top: 50%;
+  transform: translate(0, -70%);
+}
+.img-text p {
+  position: absolute;
+  top: 0;
+  font-size: 20px;
+  margin: 0;
+  width: 130px;
+  animation: imgtextp 1s;
+}
+.img-text h1 {
+  font-size: 100px;
+  margin: 0;
+  font-weight: 400;
+}
+.img-text a {
+  font-size: 15px;
+  padding: 12px 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: inline-block;
+  position: absolute;
+  width: 150px;
+  text-align: center;
+  top: 90%;
+  animation: imgtexta 3s;
+  transition: 0.5s;
+}
+.img-text a:hover {
+  background-color: black;
+  color: white;
+}
+
+.img-text-h1 {
+  position: absolute;
+  top: 10%;
+  animation: imgtexth1 3s;
+  width: 600px;
+}
+
+.img-text-recotton {
+  position: absolute;
+  top: 90%;
+  left: 80%;
+  font-size: 18px;
+  animation: imgtextrecotton 3s;
+}
+.img-text-recotton > p {
+  display: inline-block;
+  margin-right: 10px;
+}
+.img-text-recotton a {
+  border-bottom: 2px solid black;
+  font-weight: bolder;
+  margin-left: 5px;
+}
+
+.section-collection-head {
+  font-family: "Jost";
+}
+.section-collection-head .row {
+  padding: 0 20px;
+  max-width: 1680px;
+  margin: auto;
+  height: 200px;
+}
+.section-collection-head .row span {
+  font-size: 40px;
+}
+.section-collection-head .row .arrow a {
+  margin-right: 20px;
+}
+.section-collection-head .row .arrow a :hover {
+  cursor: pointer;
+}
+
+.youarein {
+  font-family: "Jost";
+  font-size: 44px;
+  text-align: center;
+  padding: 50px;
+  display: flex;
+  clear: right;
+}
+.youarein .youarein-content {
+  flex: 1;
+  padding: 0 10px;
+}
+.youarein span {
+  color: gray;
+  float: right;
+}
+.youarein p {
+  display: inline-block;
+  float: left;
+  margin: 0;
+}
+.youarein p::after {
+  content: "";
+  height: 2px;
+  background-color: black;
+  width: 100%;
+  display: block;
+}
+.youarein p:hover {
+  cursor: pointer;
+  color: gray;
+}
+.youarein p i {
+  font-size: 15px;
+  margin-left: 30px;
+}
+
+.info {
+  font-family: "Jost";
+  border-top: 1px solid lightgray;
+}
+.info .row {
+  padding: 40px 20px;
+  max-width: 1480px;
+  margin: auto;
+}
+.info .row .info-item {
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.info .row .info-item img {
+  width: 30px;
+  height: 30px;
+}
+.info .row .info-item .text h2 {
+  font-weight: 500;
+  font-size: 20px;
+}
+.info .row .info-item .text p {
+  color: gray;
+}
+
+.contact {
+  font-family: "Jost";
+  border-bottom: 1px solid lightgray;
+  background-color: #F6F6F5;
+}
+.contact .row {
+  padding: 0 20px;
+  max-width: 1680px;
+  margin: auto;
+}
+.contact .row .contact-item {
+  height: 100%;
+  padding: 60px 0;
+  order: 1;
+}
+.contact .row .contact-item a {
+  display: block;
+  padding: 5px 0;
+  color: gray;
+  transition: 0.4s;
+}
+.contact .row .contact-item a:hover {
+  opacity: 0.7;
+}
+.contact .row .contact-item p {
+  color: gray;
+  line-height: 25px;
+}
+.contact .row .contact-item h2 {
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.contact .row .contact-item .contact-responsive-item {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.contact .row .contact-item .contact-responsive-item h2 {
+  font-weight: 500;
+  font-size: 16px;
+}
+.contact .row .contact-item .contact-responsive-item p {
+  color: gray;
+  line-height: 25px;
+}
+.contact .row .contact-item .contact-responsive-item a {
+  display: block;
+  clear: both;
+  padding: 8px 0;
+  color: gray;
+}
+.contact .row .border {
+  padding-left: 40px;
+}
+.contact .row .last {
+  padding-left: 40px;
+  order: 2;
+}
+.contact .row .last input {
+  width: 70%;
+  float: left;
+  height: 40px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  padding-left: 10px;
+  color: black;
+  font-size: 14px;
+}
+.contact .row .last input:focus {
+  outline: none;
+}
+.contact .row .last i {
+  width: 10%;
+  float: left;
+  height: 40px;
+  display: block;
+  font-size: 16px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact .row .last button {
+  width: 20%;
+  float: right;
+  height: 40px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  border-radius: 5px;
+}
+.contact .row .last button i {
+  clear: both;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.contact .row .last button :hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1400px) {
@@ -97,5 +438,29 @@ nav .row .col-xxl-4 li:first-child {
 @media screen and (max-width: 768px) {
   .top2 {
     display: none;
+  }
+}
+@media screen and (max-width: 992px) {
+  .info .row {
+    padding: 40px 0;
+  }
+  .contact .row .contact-item {
+    padding: 5px;
+  }
+  .contact .row .contact-item > div {
+    display: none;
+  }
+  .contact .row .contact-item .contact-responsive-item {
+    display: flex;
+  }
+}
+@media screen and (max-width: 600px) {
+  .section-collection-head .row span {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .section-collection-head .row span {
+    font-size: 22px;
   }
 }/*# sourceMappingURL=style.css.map */
