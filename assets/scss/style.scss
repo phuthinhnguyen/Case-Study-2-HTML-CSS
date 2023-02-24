@@ -378,8 +378,13 @@ nav{
                 }
             }
         }
-        .border{
+        .toborder{
             padding-left: 40px;
+            border-left: 1px solid lightgray;
+            border-right: 1px solid lightgray;
+        }
+        .first{
+            order: 1;
         }
         .last{
             padding-left: 40px;
@@ -438,6 +443,11 @@ nav{
 }
 
 
+// CSS footer
+footer{
+    
+}
+
 
 @media screen and (max-width:1400px){
     .top2{
@@ -475,12 +485,17 @@ nav{
                     display: flex;
                 }
             }
-          
+            .toborder{
+                border: none;
+            }
+            .last{
+                order: 0;
+                padding-top: 30px;
+            }
         }
     }
-
-
 }
+
 @media screen and (max-width:600px){
     .section-collection-head{
         .row{

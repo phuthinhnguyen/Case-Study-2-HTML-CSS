@@ -371,8 +371,13 @@ nav .row .col-xxl-4 li:first-child {
   padding: 8px 0;
   color: gray;
 }
-.contact .row .border {
+.contact .row .toborder {
   padding-left: 40px;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+}
+.contact .row .first {
+  order: 1;
 }
 .contact .row .last {
   padding-left: 40px;
@@ -452,6 +457,13 @@ nav .row .col-xxl-4 li:first-child {
   }
   .contact .row .contact-item .contact-responsive-item {
     display: flex;
+  }
+  .contact .row .toborder {
+    border: none;
+  }
+  .contact .row .last {
+    order: 0;
+    padding-top: 30px;
   }
 }
 @media screen and (max-width: 600px) {
