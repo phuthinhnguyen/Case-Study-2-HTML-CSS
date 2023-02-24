@@ -267,6 +267,28 @@ nav .row .col-xxl-4 li:first-child {
   flex: 1;
   padding: 0 10px;
 }
+.youarein .youarein-content .dropdown {
+  display: none;
+  clear: both;
+  background-color: white;
+  margin-top: 50px;
+  width: 250px;
+  height: 120px;
+  z-index: 1;
+  box-shadow: 0px 0px 5px 0px black;
+}
+.youarein .youarein-content .dropdown a {
+  display: block;
+  font-size: 16px;
+  text-align: left;
+  padding: 6px 8px;
+  font-weight: 500;
+}
+.youarein .youarein-content .dropdown a:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
 .youarein span {
   color: gray;
   float: right;
@@ -275,6 +297,7 @@ nav .row .col-xxl-4 li:first-child {
   display: inline-block;
   float: left;
   margin: 0;
+  transition: 0.4s;
 }
 .youarein p::after {
   content: "";
@@ -351,6 +374,9 @@ nav .row .col-xxl-4 li:first-child {
   font-size: 16px;
   margin-bottom: 20px;
 }
+.contact .row .contact-item .infomation, .contact .row .contact-item .services {
+  display: none;
+}
 .contact .row .contact-item .contact-responsive-item {
   display: none;
   justify-content: space-between;
@@ -371,6 +397,9 @@ nav .row .col-xxl-4 li:first-child {
   padding: 8px 0;
   color: gray;
 }
+.contact .row .contact-item .information-menu h2, .contact .row .contact-item .services-menu h2 {
+  margin: 0;
+}
 .contact .row .toborder {
   padding-left: 40px;
   border-left: 1px solid lightgray;
@@ -378,6 +407,9 @@ nav .row .col-xxl-4 li:first-child {
 }
 .contact .row .first {
   order: 1;
+}
+.contact .row .first p {
+  margin: 0;
 }
 .contact .row .last {
   padding-left: 40px;
@@ -432,6 +464,31 @@ nav .row .col-xxl-4 li:first-child {
   cursor: pointer;
 }
 
+footer {
+  font-family: "Jost";
+  background-color: #F6F6F5;
+}
+footer .row {
+  padding: 0 20px;
+  max-width: 1680px;
+  margin: auto;
+}
+footer .row div {
+  line-height: 80px;
+  height: 80px;
+}
+footer .row .last {
+  text-align: right;
+}
+footer .row .last a {
+  display: inline-block;
+  margin-left: 30px;
+  font-size: 18px;
+}
+footer .row .last a:hover {
+  color: gray;
+}
+
 @media screen and (max-width: 1400px) {
   .top2 .row .col-xxl-4:first-of-type {
     display: none;
@@ -440,20 +497,25 @@ nav .row .col-xxl-4 li:first-child {
     text-align: left;
   }
 }
-@media screen and (max-width: 768px) {
-  .top2 {
-    display: none;
-  }
-}
 @media screen and (max-width: 992px) {
   .info .row {
-    padding: 40px 0;
+    padding: 30px 0;
+  }
+  .info .row .info-item {
+    height: 80px;
+    margin-top: 10px;
+  }
+  .contact .row {
+    padding: 0 10px;
   }
   .contact .row .contact-item {
     padding: 5px;
   }
   .contact .row .contact-item > div {
     display: none;
+  }
+  .contact .row .contact-item .email {
+    display: block;
   }
   .contact .row .contact-item .contact-responsive-item {
     display: flex;
@@ -464,6 +526,45 @@ nav .row .col-xxl-4 li:first-child {
   .contact .row .last {
     order: 0;
     padding-top: 30px;
+    margin-bottom: 20px;
+  }
+  .contact .row .last input {
+    width: 80%;
+  }
+  .contact .row .last button {
+    width: 10%;
+  }
+  footer {
+    height: 160px;
+  }
+  footer .row {
+    padding: 5px 0;
+  }
+  footer .row div {
+    text-align: center;
+    height: 40px;
+  }
+  footer .row .last {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .top2 {
+    display: none;
+  }
+  .contact .row .last input {
+    width: 75%;
+  }
+  .contact .row .last button {
+    width: 15%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .contact .row .last input {
+    width: 70%;
+  }
+  .contact .row .last button {
+    width: 20%;
   }
 }
 @media screen and (max-width: 600px) {

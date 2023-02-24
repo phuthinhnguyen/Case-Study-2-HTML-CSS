@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -117,8 +118,22 @@
         </div>
         <div class="youarein-content">
             <p>best sellers<i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+            <div class="dropdown">
+                <a>best sellers</a>
+                <a>on sale</a>
+                <a>top trending</a>
+            </div>
         </div>
     </div>
+    <script>
+        $(".youarein-content").children("p").click(function name(params) {
+            $(".dropdown").fadeToggle()
+        })
+        $(".youarein-content").find("a").click(function name(params) {
+            $(".youarein-content").children("p").html($(this).text()+'<i class="fa fa-chevron-down" aria-hidden="true"></i>')
+            $(".dropdown").fadeToggle()
+        })
+    </script>
 
 
     <!-- info -->
@@ -175,9 +190,17 @@
                     <a href="">Wishlist</a>
                     <a href="">Check out</a>
                 </div>
-                <div class="contact-responsive-item">
+                <div class="contact-responsive-item information-menu">
                     <h2>Information</h2>
                     <a id="plus"><i class="fa-sharp fa-solid fa-plus"></i></a>
+                    <a id="minus"><i class="fa fa-minus"></i></a>
+                </div>
+                <div class="infomation">
+                    <a href="">My account</a>
+                    <a href="">Login</a>
+                    <a href="">My cart</a>
+                    <a href="">Wishlist</a>
+                    <a href="">Check out</a>
                 </div>
             </div>
             <div class="contact-item col-md-12 col-lg-3 toborder">
@@ -189,31 +212,67 @@
                     <a href="">Contact us</a>
                     <a href="">Delivery Information</a>
                 </div>
-                <div class="contact-responsive-item">
+                <div class="contact-responsive-item services-menu">
                     <h2>Services</h2>
                     <a id="plus"><i class="fa-sharp fa-solid fa-plus"></i></a>
+                    <a id="minus"><i class="fa fa-minus"></i></a>
+                </div>
+                <div class="services">
+                    <a href="">About Us</a>
+                    <a href="">Privacy Policy</a>
+                    <a href="">Faq's</a>
+                    <a href="">Contact us</a>
+                    <a href="">Delivery Information</a>
                 </div>
             </div>
             <div class="contact-item col-md-12 col-lg-3 last">
                 <h2>Subscribe</h2>
                 <p>Enter your email below to be the first to know about new collections and product launches.</p>
-                <div>
+                <div class="email">
                     <i class="fa fa-envelope" aria-hidden="true"></i><input type="text" placeholder="Your email address"><button><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
                 </div>
             </div>
         </div> 
     </div>
-
+    <script>
+        let informationmenuindex=0;
+        let servicesmenuindex=0;
+        $(".contact-responsive-item").children("#minus").hide();
+        $(".information-menu").click(function name(params) {
+            $(".infomation").slideToggle();
+            informationmenuindex++;
+            if (informationmenuindex%2!=0){
+                $(this).children("#plus").css({"display":"none"});
+                $(this).children("#minus").css({"display":"block"});
+            }
+            else{
+                $(this).children("#plus").css({"display":"block"});
+                $(this).children("#minus").css({"display":"none"});
+             }
+        })
+        $(".services-menu").click(function name(params) {
+            $(".services").slideToggle();
+            servicesmenuindex++;
+            if (servicesmenuindex%2!=0){
+                $(this).children("#plus").css({"display":"none"});
+                $(this).children("#minus").css({"display":"block"});
+            }
+            else{
+                $(this).children("#plus").css({"display":"block"});
+                $(this).children("#minus").css({"display":"none"});
+             }
+        })
+    </script>
     <!-- footer -->
     <footer class="container-fluid">
-        <div class="footer-wrap">
-            <div class="img">
-                <img src="assets/images/index/payment.png" alt="">
+        <div class="row">
+            <div class="img col-md-12 col-lg-4">
+                <img src="assets/images/payment.png" alt="">
             </div>
-            <div class="logo">
+            <div class="logo col-md-12 col-lg-4 text-center">
                 <p>&copy; MINIMOG 2022</p>
             </div>
-            <div class="link">
+            <div class="link col-md-12 col-lg-4 last">
                 <a href="https://www.facebook.com/profile.php?id=100009223194372" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                 <a href=""><i class="fa-brands fa-twitter"></i></a>
                 <a href="https://www.instagram.com/phuthinhnguyen1407/" target="_blank"><i class="fa-brands fa-instagram"></i></a>

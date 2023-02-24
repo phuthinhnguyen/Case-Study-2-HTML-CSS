@@ -268,6 +268,30 @@ nav{
     .youarein-content {
         flex: 1;
         padding: 0 10px;
+        .dropdown{
+            display: none;
+            clear: both;
+            background-color: white;
+            margin-top: 50px;
+            width:250px;
+            height: 120px;
+            z-index: 1;
+            box-shadow: 0px 0px 5px 0px black;
+            a{
+                display: block;
+                font-size: 16px;
+                text-align: left;
+                padding: 6px 8px;
+                font-weight: 500;
+                &:hover{
+                    background-color: black;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+
+          
+        }
     }
 	span {
 		color: gray;
@@ -277,6 +301,7 @@ nav{
 		display: inline-block;
 		float: left;
 		margin: 0;
+        transition: .4s;
 		&::after {
 			content: "";
 			height: 2px;
@@ -357,6 +382,9 @@ nav{
                 font-size: 16px;
                 margin-bottom: 20px;
             }
+            .infomation,.services{
+                display: none;
+            }
             .contact-responsive-item{
                 display: none;
                 justify-content: space-between;
@@ -377,6 +405,11 @@ nav{
                     color: gray;
                 }
             }
+            .information-menu, .services-menu{
+                h2{
+                    margin: 0;
+                }
+            }
         }
         .toborder{
             padding-left: 40px;
@@ -385,6 +418,9 @@ nav{
         }
         .first{
             order: 1;
+            p{
+                margin: 0;
+            }
         }
         .last{
             padding-left: 40px;
@@ -445,7 +481,29 @@ nav{
 
 // CSS footer
 footer{
-    
+    @include font($fontJost);
+    background-color: #F6F6F5;
+    .row{
+        padding: 0 20px;
+        max-width: 1680px;
+        margin: auto;
+        div{
+            line-height: 80px;
+            height: 80px;
+        }
+        .last{
+            text-align: right;
+            a{
+                display: inline-block;
+                margin-left: 30px;
+                font-size: 18px;
+                &:hover{
+                    color: gray;
+                }
+            }
+        }
+     
+    }
 }
 
 
@@ -462,24 +520,26 @@ footer{
         
 }
 }
-@media screen and (max-width:768px){
-    .top2{
-        display: none;     
-    }
-  
-}
 @media screen and (max-width:992px){
     .info{
         .row{
-            padding: 40px 0;
+            padding: 30px 0;
+            .info-item{
+                height: 80px;
+                margin-top: 10px;
+            }
         }
     }
     .contact{
         .row{
+            padding: 0 10px;
             .contact-item{
                 padding: 5px;
                 >div{
                     display: none;
+                }
+                .email{
+                    display: block;
                 }
                 .contact-responsive-item{
                     display: flex;
@@ -491,11 +551,63 @@ footer{
             .last{
                 order: 0;
                 padding-top: 30px;
+                margin-bottom: 20px;
+                input{
+                    width: 80%;
+                }
+                button{
+                    width: 10%;
+                }
+            }
+        }
+    }
+    footer{
+        height: 160px;
+        .row{
+            padding: 5px 0;
+            div{
+                text-align: center;
+                height: 40px;
+            }
+            .last{
+                text-align: center;
             }
         }
     }
 }
 
+@media screen and (max-width:768px){
+    .top2{
+        display: none;     
+    }
+    .contact{
+        .row{
+            .last{
+                input{
+                    width: 75%;
+                }
+                button{
+                    width: 15%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:500px){
+    .contact{
+        .row{
+            .last{
+                input{
+                    width: 70%;
+                }
+                button{
+                    width: 20%;
+                }
+            }
+        }
+    }
+  }
 @media screen and (max-width:600px){
     .section-collection-head{
         .row{
@@ -506,11 +618,11 @@ footer{
     }
   }
 @media screen and (max-width:400px){
-.section-collection-head{
-    .row{
-        span{
-            font-size: 22px;
+    .section-collection-head{
+        .row{
+            span{
+                font-size: 22px;
+            }
         }
     }
-}
 }
