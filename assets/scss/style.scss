@@ -40,22 +40,74 @@ body{
         margin: auto;
         >div{
             line-height: 40px;
+            a{  
+                transition: .4s;
+                &:hover{
+                    color: $a-hover;
+                }
+            }
+            .facebook{
+                margin-left: 20px;
+            }
+           
         } 
-        .col-md-10{
+        .col-md-9{
             text-align: center;
+            a{
+                text-decoration: underline;
+                transition: .4s;
+            }
         } 
+        .col-md-3{
+            .dropdown-menu{
+                    height: 500px;
+                    padding: 0 30px;
+                    margin: 0;
+                    border: none;
+                    li{
+                        text-align: left;
+                       a{
+                            padding: 0;
+                            margin-top: 15px;
+                            height: 20px;
+                            color: $contact-a;
+                            &:hover{
+                                background-color: white;
+                                color: $a-hover;
+                            }
+                       }
+                    }
+            }
+            .usd{
+                height: 100px;
+            }
+            .btn-group{
+                a{
+                    &:hover{
+                        cursor: pointer;
+                        color: black;
+                    }
+                }
+                &:last-of-type{
+                    margin-left: 10px;
+                }
+            }
+           
+        }
     }
 }
-@keyframes navleft {
-    0%{width: 0;}
-    100%{width: 130%;}
-  }
+
 nav{
     @include font($fontJost);
     position: sticky;
     top: 0;
     z-index: 2;
     background-color: white;
+    @keyframes navleft 
+    {
+        0% {width: 0;}
+        100% {width: 130%;}
+    }
     .row{
         height: 70px;
         padding: 0 20px;
@@ -82,13 +134,13 @@ nav{
                     left: -20px;
                         .menu-dropdown-item{
                             a:not(#shopnow){  
-                                width: 200px;
+                                width: 150px;
                                 display: block;
                                 color: gray;
                                 padding: 8px 10px;
                                 transition: .3s;
                                 user-select: none;
-                                &:hover{
+                                &:hover:not(#hot,#new){
                                     background-color: rgb(230, 228, 228);
                                     color: black;
                                 }
@@ -107,6 +159,27 @@ nav{
                                     &:hover{
                                         color: black;
                                     }
+                            }
+                            div{
+                                position: relative;
+                                #hot, #new{
+                                    display: inline-block;
+                                    background-color: rgb(236, 111, 111);
+                                    position: absolute;
+                                    border-radius: 10px;
+                                    color: white;
+                                    padding: 3px 8px;
+                                    width: 40px;
+                                    top:0;
+                                    left: 55%;
+                                    font-size: 12px;
+                                    font-weight: 500;
+                                    user-select: none;
+                                }
+                                #new{
+                                    background-color: rgb(15, 192, 133);
+                                    left: 70%;
+                                }
                             }
                         }
                      
@@ -174,6 +247,88 @@ nav{
                 font-size: 25px;
             }
         }
+        .offcanvas{
+            padding: 0;
+            width: 380px;
+        }
+        .offcanvas-header{
+            .menu-show-wrap{
+                padding: 20px;
+                .menu-show-item{
+                    width: 300px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 15px 10px;
+                    &:hover{
+                        background-color: rgb(238, 238, 238);
+                        cursor: pointer;
+                    }
+                    a{
+                        display: inline;
+                        margin: 0;
+                        font-weight: 500;
+                        &:last-of-type{
+                            display: none;
+                        }
+                        &:hover{
+                            color: $a-hover;
+                        }
+                    }
+                }
+                .menu-show-item-myaccount{
+                    margin-top: 60px;
+                    font-size: 20px;
+                    font-weight: 500;
+                    padding-left: 10px;
+                    span{
+                        margin-left: 10px;
+                    }
+                }
+                button{
+                    display: block;
+                    width: 95%;
+                    margin: auto;
+                    margin-top: 20px;
+                    height: 45px;
+                    border: 1px solid black;
+                    border-radius: 5px;
+                    font-weight: 500;
+                    background-color: white;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    &:first-of-type{
+                        color: white;
+                        background-color: black;
+                    }
+                    &:last-of-type:hover{
+                        color: white;
+                        background-color: black;
+                    }
+                }
+            }
+            .menu-show-close{
+                position: fixed;
+                width: 40px;
+                height: 40px;
+                top: 0;
+                left: 380px;
+                font-size: 30px;
+                color: white;
+                text-align: center;
+                line-height: 40px;
+                user-select: none;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+        .center{
+            img:hover{
+                cursor: pointer;
+            }
+        }
         .right{
             display: flex;
             align-items: center;
@@ -193,10 +348,11 @@ nav{
                 &:hover i{
                     color: black;
                 }
-                @keyframes tooltiptext{
-                    0%{top:70%}
-                    100%{top:80%}
-                  }
+                @keyframes tooltiptext
+                {
+                    0% {top:70%}
+                    100% {top:80%}
+                }
                 .tooltiptext {
                     visibility: hidden;
                     width: 60px;
@@ -377,6 +533,9 @@ nav{
 		border-bottom: 2px solid black;
 		font-weight: bolder;
 		margin-left: 5px;
+        &:hover{
+            color: black;
+        }
 	}
 }
 
@@ -511,14 +670,14 @@ nav{
             a {
                 display: block;
                 padding: 5px 0;
-                color: gray;
+                color: $contact-a;
                 transition: .4s;
                 &:hover {
-                    opacity: 0.7;
+                    color: $a-hover;
                 }
             }
             p {
-                color: gray;
+                color: $contact-a;
                 line-height: 25px;
             }
             h2 {
@@ -539,14 +698,14 @@ nav{
                     font-size: 16px;
                 }
                 p{
-                    color: gray;
+                    color: $contact-a;
                     line-height: 25px;
                 }
                 a{
                     display: block;
                     clear: both;
                     padding: 8px 0;
-                    color: gray;
+                    color: $contact-a;
                 }
             }
             .information-menu, .services-menu{
@@ -650,7 +809,17 @@ footer{
     }
 }
 
-
+@media screen and (max-width:1470px){
+    nav{
+        .row{
+             .left{
+                    li{
+                        margin-left:50px;
+                    }
+                }
+        }
+    }
+}
 @media screen and (max-width:1400px){
     .top2{
         .row{
@@ -658,7 +827,7 @@ footer{
             .col-xxl-4:first-of-type{
                 display: none;
             }
-            .col-md-10{
+            .col-md-9{
                 text-align: left;
             }   
         }
@@ -668,6 +837,17 @@ footer{
             padding: 0 5px;
         }
     }  
+}
+@media screen and (max-width:1350px){
+    nav{
+        .row{
+             .left{
+                    li{
+                        margin-left:40px;
+                    }
+                }
+        }
+    }
 }
 @media screen and (max-width:1200px){
     nav{
@@ -745,6 +925,24 @@ footer{
     .top2{
         display: none;     
     }
+    nav{
+        .row{
+            .offcanvas{
+                width: 300px;
+            }
+            .offcanvas-header{
+                .menu-show-wrap{
+                    padding: 10px;
+                    .menu-show-item{
+                        width: 250px;
+                    }
+                }
+                .menu-show-close{
+                    left: 300px;
+                }
+            }
+            }
+    }
     .contact{
         .row{
             .last{
@@ -784,7 +982,27 @@ footer{
             }
         }
     }
-  }
+}
+@media screen and (max-width:450px){
+    nav{
+        .row{
+            .offcanvas{
+                width: 250px;
+            }
+            .offcanvas-header{
+                .menu-show-wrap{
+                    padding: 10px;
+                    .menu-show-item{
+                        width: 200px;
+                    }
+                }
+                .menu-show-close{
+                    left: 250px;
+                }
+            }
+            }
+    }
+}
 @media screen and (max-width:400px){
     .section-collection-head{
         .row{
