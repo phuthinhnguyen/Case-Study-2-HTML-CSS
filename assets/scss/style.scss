@@ -136,7 +136,7 @@ nav{
                     height: 500px;
                     left: -20px;
                         .menu-dropdown-item{
-                            a:not(#shopnow){  
+                            >a:not(#shopnow),>div>a{  
                                 width: 150px;
                                 display: block;
                                 color: gray;
@@ -148,7 +148,7 @@ nav{
                                     color: black;
                                 }
                             }
-                            p{
+                            >p{
                                 font-size: 25px;
                                 font-weight: 400;
                                 margin-top: 20px;
@@ -183,6 +183,37 @@ nav{
                                     background-color: rgb(15, 192, 133);
                                     left: 70%;
                                 }
+                            }
+                            .menu-dropdown-item-product{
+                                padding: 40px;
+                                display: grid;
+                                column-gap: 10px;
+                                grid-template-columns: auto auto;
+                                position: relative;
+                                .item{
+                                    .item-top{
+                                       @include item-top;
+                                    }
+                                    .item-center{
+                                        @include item-center;
+                                    }
+                                }
+                                #arrow-left,#arrow-right{
+                                    @include arrow-left-right;
+                                }
+                                #arrow-left{
+                                    left: 0;
+                                }
+                                #arrow-right{
+                                    right: 0;
+                                }
+                                &:hover #arrow-left, &:hover #arrow-right{
+                                    display: flex;
+                                }
+                            }
+                            #weekhighlight{
+                                text-align: center;
+                                font-weight: 500;
                             }
                         }
                      
@@ -735,156 +766,10 @@ nav{
     row-gap: 30px;
         .item{
             .item-top{
-                position: relative;
-                min-width: 200px;
-                &:hover{
-                    cursor: pointer;
-                }
-                img{
-                    width: 100%;
-                    height: auto;
-                }
-                .overlay-item1{
-                    position: absolute;
-                    bottom: 1%;
-                    left: 0;
-                    right: 0;
-                    overflow: hidden;
-                    width: 100%;
-                    height:0;
-                    transition: .4s ease;
-                    z-index: 2;
-                    user-select: none;
-                    .addtocard{
-                        color: black;
-                        font-weight: 500;
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        text-align: center;
-                        border-radius: 5px;
-                        width: 90%;
-                        padding: 10px;
-                        background-color: white;
-                        border: none;
-                        transition: .4s;
-                        &:hover{
-                            color: white;
-                            background-color: black;
-                            cursor: pointer;
-                        }
-                    }
-                }
-                .overlay-item2{
-                    position: absolute;
-                    right: 1%;
-                    top: 0;
-                    bottom: 0;
-                    overflow: hidden;
-                    width: 0;
-                    margin: 5px 10px;
-                    transition: .4s ease;
-                    user-select: none;
-                    z-index: 1;
-                    div{
-                        display: flex;
-                        justify-content: right;
-                        align-items: center;
-                        width: 100%;
-                        margin-top: 20px;
-                        span{
-                            display: none;
-                            background-color: black;
-                            color: #fff;
-                            padding: 8px 10px;
-                            font-size: 14px;
-                            border-radius: 5px;
-                            box-shadow:  2px 4px 5px grey;
-                        }
-                        span+i{
-                            display: none;
-                            font-size: 28px;
-                            margin-left: -10px;
-                            margin-right: 5px;
-                            color: black;
-                        }
-                        a{
-                            display: inline-block;
-                            color: black;
-                            text-align: center;
-                            background-color: white;
-                            border: none;
-                            width: 40px;
-                            height: 40px;
-                            border-radius: 50%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            margin-right: 10px;
-                            transition: .5s;
-                            &:hover{
-                                color: white;
-                                background-color: black;
-                                cursor: pointer;
-                            }
-                        }
-                        i{
-                            font-size: 16px;
-                            text-align: center;
-                            display: inline-block;
-                        }
-                        &:hover span,&:hover span+i{
-                            display: inline-block;
-                        }
-                    }
-                }
-                .overlay-item3{
-                    position: absolute;
-                    bottom: 1%;
-                    overflow: hidden;
-                    width: 100%;
-                    height:0;
-                    transition: .5s ease;
-                    user-select: none;
-                }
-                &:hover .overlay-item1{
-                    bottom: 0;
-                    height: 30%;
-                }
-                &:hover .overlay-item2{
-                    right: 0;
-                    top:0;
-                    width: 200px;
-                }
-                &:hover .overlay-item3{
-                    bottom: 0;
-                    height: 100%;
-                }
+               @include item-top;
             }
             .item-center{
-                a{
-                    font-weight: 450;
-                    display: block;
-                    margin-top: 20px;
-                    transition: .5s;
-                    &:hover{
-                        color: $a-hover;
-                    }
-                }
-                p{
-                    display: inline-block;
-                    margin-top: 10px;
-                    &:first-of-type{
-                        font-weight: 450;
-                    }
-                    &:last-of-type{
-                        text-decoration: line-through;
-                        margin-left: 10px;
-                        color: rgb(179, 176, 176);
-                        font-weight: 400;
-                    }
-                }
+                @include item-center;
             }
             .item-bottom{
                 height: 70px;
