@@ -245,6 +245,10 @@ nav .row .left li:first-child {
 nav .row .menu {
   display: none;
 }
+nav .row .menu .bar:hover, nav .row .menu .bar:hover i {
+  cursor: pointer;
+  color: black;
+}
 nav .row .menu i {
   font-size: 25px;
 }
@@ -716,6 +720,253 @@ nav .row .right i {
   color: gray;
 }
 
+.product {
+  font-family: "Jost";
+  max-width: 1680px;
+  padding: 40px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-template-rows: auto auto auto;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  row-gap: 30px;
+}
+.product .item .item-top {
+  position: relative;
+  min-width: 200px;
+}
+.product .item .item-top:hover {
+  cursor: pointer;
+}
+.product .item .item-top img {
+  width: 100%;
+  height: auto;
+}
+.product .item .item-top .overlay-item1 {
+  position: absolute;
+  bottom: 1%;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.4s ease;
+  z-index: 2;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.product .item .item-top .overlay-item1 .addtocard {
+  color: black;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-radius: 5px;
+  width: 90%;
+  padding: 10px;
+  background-color: white;
+  border: none;
+  transition: 0.4s;
+}
+.product .item .item-top .overlay-item1 .addtocard:hover {
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+.product .item .item-top .overlay-item2 {
+  position: absolute;
+  right: 1%;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  width: 0;
+  margin: 5px 10px;
+  transition: 0.4s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  z-index: 1;
+}
+.product .item .item-top .overlay-item2 div {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+.product .item .item-top .overlay-item2 div span {
+  display: none;
+  background-color: black;
+  color: #fff;
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 2px 4px 5px grey;
+}
+.product .item .item-top .overlay-item2 div span + i {
+  display: none;
+  font-size: 28px;
+  margin-left: -10px;
+  margin-right: 5px;
+  color: black;
+}
+.product .item .item-top .overlay-item2 div a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  background-color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  transition: 0.5s;
+}
+.product .item .item-top .overlay-item2 div a:hover {
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+.product .item .item-top .overlay-item2 div i {
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+}
+.product .item .item-top .overlay-item2 div:hover span, .product .item .item-top .overlay-item2 div:hover span + i {
+  display: inline-block;
+}
+.product .item .item-top .overlay-item3 {
+  position: absolute;
+  bottom: 1%;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.product .item .item-top:hover .overlay-item1 {
+  bottom: 0;
+  height: 30%;
+}
+.product .item .item-top:hover .overlay-item2 {
+  right: 0;
+  top: 0;
+  width: 200px;
+}
+.product .item .item-top:hover .overlay-item3 {
+  bottom: 0;
+  height: 100%;
+}
+.product .item .item-center a {
+  font-weight: 450;
+  display: block;
+  margin-top: 20px;
+  transition: 0.5s;
+}
+.product .item .item-center a:hover {
+  color: rgb(182, 180, 180);
+}
+.product .item .item-center p {
+  display: inline-block;
+  margin-top: 10px;
+}
+.product .item .item-center p:first-of-type {
+  font-weight: 450;
+}
+.product .item .item-center p:last-of-type {
+  text-decoration: line-through;
+  margin-left: 10px;
+  color: rgb(179, 176, 176);
+  font-weight: 400;
+}
+.product .item .item-bottom {
+  height: 70px;
+  margin-top: -35px;
+}
+.product .item .item-bottom .item-bottom-color {
+  height: 100%;
+  position: relative;
+  width: 27px;
+  display: inline-block;
+  margin-right: 5px;
+}
+.product .item .item-bottom .item-bottom-color .color {
+  position: absolute;
+  bottom: 0;
+}
+.product .item .item-bottom .item-bottom-color .color a {
+  width: 27px;
+  height: 27px;
+  display: inline-block;
+  border-radius: 50%;
+  transition: 0.15s;
+}
+.product .item .item-bottom .item-bottom-color .color a:hover {
+  border: 4px solid white;
+  outline: 1px solid black;
+}
+.product .item .item-bottom .item-bottom-color .tooltip-text {
+  position: absolute;
+  bottom: 40%;
+  left: -100%;
+  height: 0;
+  min-width: 90px;
+  transition: 0.2s ease-in-out;
+  font-size: 15px;
+  overflow: hidden;
+}
+.product .item .item-bottom .item-bottom-color .tooltip-text span {
+  display: block;
+  margin: 0;
+  padding: 3px;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 2px 4px 5px grey;
+  text-align: center;
+}
+.product .item .item-bottom .item-bottom-color .tooltip-text i {
+  position: absolute;
+  left: 40%;
+  top: 40%;
+}
+.product .item .item-bottom .item-bottom-color:hover {
+  cursor: pointer;
+}
+.product .item .item-bottom .item-bottom-color:hover .tooltip-text {
+  height: 70%;
+  bottom: 35%;
+}
+
+#seemore {
+  font-family: "Jost";
+  width: 140px;
+  height: 45px;
+  line-height: 44px;
+  border: 1px solid black;
+  background-color: white;
+  display: block;
+  border-radius: 5px;
+  margin: 30px auto 120px auto;
+  text-align: center;
+  font-weight: 500;
+  transition: 0.5s;
+}
+#seemore:hover {
+  color: white;
+  background-color: black;
+}
+
 .contact {
   font-family: "Jost";
   border-bottom: 1px solid lightgray;
@@ -904,6 +1155,9 @@ footer .row .last a:hover {
   .img .img-wrap .img-text-recotton {
     left: 75%;
   }
+  .product {
+    grid-template-columns: auto auto auto auto;
+  }
 }
 @media screen and (max-width: 1350px) {
   nav .row .left li {
@@ -966,6 +1220,9 @@ footer .row .last a:hover {
   .img .img-wrap .img-text-recotton {
     top: 85%;
     left: 62%;
+  }
+  .product {
+    grid-template-columns: auto auto auto;
   }
   .info .row {
     padding: 30px 0;
@@ -1072,6 +1329,9 @@ footer .row .last a:hover {
   .youarein p i {
     margin-left: 15px;
   }
+  .product {
+    grid-template-columns: auto auto;
+  }
   .contact .row .last input {
     width: 75%;
   }
@@ -1132,6 +1392,9 @@ footer .row .last a:hover {
   }
   .youarein p i {
     margin-left: 10px;
+  }
+  .product {
+    grid-template-columns: auto;
   }
 }
 @media screen and (max-width: 450px) {
