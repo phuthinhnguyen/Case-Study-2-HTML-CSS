@@ -1,6 +1,9 @@
 @mixin link-decoration{
     text-decoration: none;
     color: black;
+    &:hover{
+        color: lightgray;
+    }
 }
 @mixin overlayitem1{
     position: absolute;

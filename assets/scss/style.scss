@@ -4,9 +4,6 @@
 body{
     a{
         @include link-decoration();
-        :hover{
-            color: lightgray;
-        }
     }
 }
 ::selection{
@@ -133,9 +130,13 @@ nav{
                     padding: 20px;
                     animation: nav-dropdown-in 0.6s;
                     top:30px;
-                    height: 500px;
                     left: -20px;
+                    overflow-x: auto;
+                    max-height: 650px;
                         .menu-dropdown-item{
+                            #season{
+                                max-width: 500px;
+                            }
                             >a:not(#shopnow),>div>a{  
                                 width: 150px;
                                 display: block;
@@ -149,7 +150,7 @@ nav{
                                 }
                             }
                             >p{
-                                font-size: 25px;
+                                font-size: 22px;
                                 font-weight: 400;
                                 margin-top: 20px;
                                 margin-bottom: 0;
@@ -187,12 +188,41 @@ nav{
                             .menu-dropdown-item-product{
                                 padding: 40px;
                                 display: grid;
-                                column-gap: 10px;
+                                column-gap: 5px;
                                 grid-template-columns: auto auto;
                                 position: relative;
+                                max-width: 450px;
                                 .item{
                                     .item-top{
                                        @include item-top;
+                                       img{
+                                        max-width: 180px;
+                                        }
+                                        &:hover .overlay-item2{
+                                            right: 20px;
+                                            top:0;
+                                            width: 180px;
+                                        }
+                                        &:hover .overlay-item1{
+                                            height: 30%;
+                                        }
+                                        .overlay-item1{
+                                            .addtocard{
+                                                width: 80%;
+                                                left: 45%;
+                                                height: 45%;
+                                                line-height: 45%;
+                                                font-size: 14px;
+                                            }
+                                        }
+                                        .overlay-item2{
+                                            div{
+                                                a{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                }
+                                            }
+                                        }
                                     }
                                     .item-center{
                                         @include item-center;
@@ -215,6 +245,7 @@ nav{
                                 text-align: center;
                                 font-weight: 500;
                             }
+                          
                         }
                      
                     }
@@ -1044,8 +1075,29 @@ footer{
     nav{
         .row{
             padding: 0 5px;
+            .left{
+                ul{
+                    li{
+                        .menu-dropdown{
+                            .menu-dropdown-item{
+                                #season{
+                                    max-width: 350px;
+                                }
+                                .menu-dropdown-item-product{
+                                    max-width: 300px;
+                                    &:hover #arrow-left, &:hover #arrow-right{
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+           
         }
     }  
+    
     .img{
         .img-wrap{
             .img-text a{
