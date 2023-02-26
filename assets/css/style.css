@@ -1341,6 +1341,48 @@ footer .row .last a:hover {
   color: gray;
 }
 
+#scrolltop img {
+  width: 100%;
+  height: auto;
+}
+#scrolltop:hover {
+  cursor: pointer;
+}
+
+.scrolltop-show {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  animation: navsticky 0.8s;
+  transition: transform 0.4s;
+}
+@keyframes navsticky {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.message {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  width: 60px;
+}
+.message img {
+  width: 100%;
+  height: auto;
+}
+.message:hover {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1700px) {
   .img .img-wrap .img-text {
     left: 40px;
@@ -1508,10 +1550,27 @@ footer .row .last a:hover {
   footer .row .last {
     text-align: center;
   }
+  .scrolltop-show {
+    width: 40px;
+    height: 40px;
+    bottom: 80px;
+  }
+  .message {
+    width: 40px;
+  }
 }
 @media screen and (max-width: 768px) {
   .top2 {
     display: none;
+  }
+  nav .row {
+    height: 50px;
+  }
+  nav .row .center img {
+    width: 140px;
+  }
+  nav .row .menu .bar i {
+    font-size: 20px;
   }
   nav .row .offcanvas {
     width: 300px;
@@ -1613,6 +1672,21 @@ footer .row .last a:hover {
   }
 }
 @media screen and (max-width: 500px) {
+  .top1 .row {
+    padding: 0;
+  }
+  .top1 .row > div {
+    font-size: 13.5px;
+  }
+  .top1 .row .top1-close {
+    right: 0;
+  }
+  nav .row .center img {
+    width: 100px;
+  }
+  nav .row .right ul .search i, nav .row .right ul .mycart i {
+    font-size: 16px;
+  }
   .img .img-wrap .img-text-recotton {
     display: none;
   }
@@ -1647,6 +1721,15 @@ footer .row .last a:hover {
   }
 }
 @media screen and (max-width: 400px) {
+  .top1 .row {
+    padding: 0;
+  }
+  .top1 .row > div {
+    font-size: 12.5px;
+  }
+  .top1 .row .top1-close {
+    right: 0;
+  }
   .img .img-wrap .img-text p {
     font-size: 16px;
   }
@@ -1662,8 +1745,8 @@ footer .row .last a:hover {
     padding: 3px;
     font-size: 12px;
   }
-  .section-collection-head .row span {
-    font-size: 22px;
+  .section-collection-head .row .arrow a i {
+    font-size: 15px;
   }
   .mycart {
     display: none;

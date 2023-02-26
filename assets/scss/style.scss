@@ -1,6 +1,7 @@
 @import "variable";
 @import "font";
 @import "mixin";
+
 body{
     a{
         @include link-decoration();
@@ -10,6 +11,8 @@ body{
     background-color: black;
     color: white;
 }
+
+
 // CSS Top:
 .top1{
     @include font($fontJost);
@@ -96,7 +99,6 @@ body{
         }
     }
 }
-
 nav{
     @include font($fontJost);
     position: sticky;
@@ -466,6 +468,8 @@ nav{
         }
     }
 }
+
+
 // CSS img:
 @keyframes imgwrap {
 	0% {
@@ -691,6 +695,8 @@ nav{
         }
     }
 }
+
+
 // CSS youarein
 .youarein {
     @include font($fontJost);
@@ -882,6 +888,8 @@ nav{
         background-color: black;
     }
 }
+
+
 // CSS contact
 .contact{
     @include font($fontJost);
@@ -1036,6 +1044,43 @@ footer{
      
     }
 }
+#scrolltop{
+    img{
+        width: 100%;
+        height: auto;
+    }
+    &:hover{
+        cursor: pointer;
+      }
+}
+.scrolltop-show{
+@keyframes navsticky {
+    0%{opacity: 0;transform: translate3d(0,-20px,0);}
+    100%{opacity: 1;transform: none;}
+    }
+position: fixed;
+bottom: 100px;
+right: 30px;
+width: 60px;
+height: 60px;
+animation: navsticky 0.8s;
+transition: transform 0.4s;
+}
+.message{
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    width: 60px;
+    img{
+        width: 100%;
+        height: auto;
+    }
+    &:hover{
+        cursor: pointer;
+      }
+  }
+
+
 @media screen and (max-width:1700px){
     .img{
         .img-wrap{
@@ -1166,6 +1211,7 @@ footer{
            
         }
     }
+   
 }
 @media screen and (max-width:992px){
     .img{
@@ -1249,6 +1295,14 @@ footer{
             }
         }
     }
+    .scrolltop-show{
+        width: 40px;
+        height: 40px;
+        bottom: 80px;
+    }
+    .message{
+        width: 40px;
+    }
 }
 
 @media screen and (max-width:768px){
@@ -1257,6 +1311,20 @@ footer{
     }
     nav{
         .row{
+            height: 50px;
+            .center{
+                img{
+                   width: 140px;
+                }
+            }
+            .menu{
+                .bar{
+                    i{
+                        font-size: 20px;
+                    }   
+                 
+                }
+            }
             .offcanvas{
                 width: 300px;
             }
@@ -1273,6 +1341,7 @@ footer{
             }
             }
     }
+  
     .img{
         .img-wrap{
             .img-text {
@@ -1378,6 +1447,37 @@ footer{
     }
 }
 @media screen and (max-width:500px){
+    .top1{
+        .row{
+            padding: 0;
+            >div{
+                font-size: 13.5px;
+            }
+            .top1-close{
+                right: 0;
+            }
+        }
+    }
+    nav{
+        .row{
+            .center{
+                img{
+                    width: 100px;
+                }
+            }
+            .right{
+                ul{
+                    .search, .mycart{
+                        i{
+                            font-size: 16px;
+                        }
+                       
+                    }
+                   
+                }
+            }
+        }
+    }
     .img{
         .img-wrap{
             .img-text-recotton{
@@ -1430,6 +1530,17 @@ footer{
     }
 }
 @media screen and (max-width:400px){
+    .top1{
+        .row{
+            padding: 0;
+            >div{
+                font-size: 12.5px;
+            }
+            .top1-close{
+                right: 0;
+            }
+        }
+    }
     .img{
         .img-wrap{
             .img-text {
@@ -1455,7 +1566,14 @@ footer{
     .section-collection-head{
         .row{
             span{
-                font-size: 22px;
+               
+            }
+            .arrow{
+                a{
+                    i{
+                        font-size: 15px;
+                    }
+                }
             }
         }
     }
