@@ -471,53 +471,19 @@ nav{
 
 
 // CSS img:
-@keyframes imgwrap {
-	0% {
-		opacity: 0.3;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-@keyframes imgtextp {
-	0% {
-		top: 30%;
-	}
-	100% {
-		top: 0;
-	}
-}
-@keyframes imgtexth1 {
-	0% {
-        display: block;
-		top: 70%;
-	}
-	100% {
-        display: block;
-		top: 10%;
-	}
-}
-@keyframes imgtexta {
-	0% {
-		top: 150%;
-	}
-	100% {
-		top: 90%;
-	}
-}
-@keyframes imgtextrecotton {
-	0% {
-		left: 70%;
-	}
-	100% {
-		left: 80%;
-	}
-}
 .img {
 	position: relative;
     @include font($fontJost);
 }
 .img-wrap {
+    @keyframes imgwrap {
+        0% {
+            opacity: 0.3;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
 	position: relative;
 	animation: imgwrap 4s;
 	img {
@@ -552,6 +518,14 @@ nav{
     }
 }
 .img-text {
+    @keyframes imgtextp {
+        0% {
+            top: 30%;
+        }
+        100% {
+            top: 0;
+        }
+    }
 	position: absolute;
 	height: 40%;
     left: 140px;
@@ -571,6 +545,14 @@ nav{
 		font-weight: 400;
 	}
 	a {
+        @keyframes imgtexta {
+            0% {
+                top: 150%;
+            }
+            100% {
+                top: 90%;
+            }
+        }
 		font-size: 15px;
 		padding: 12px 30px;
 		border: 1px solid black;
@@ -589,12 +571,30 @@ nav{
 	}
 }
 .img-text-h1 {
+    @keyframes imgtexth1 {
+        0% {
+            display: block;
+            top: 70%;
+        }
+        100% {
+            display: block;
+            top: 10%;
+        }
+    }
 	position: absolute;
 	top: 10%;
 	animation: imgtexth1 3s;
 	width: 600px;
 }
 .img-text-recotton {
+    @keyframes imgtextrecotton {
+        0% {
+            left: 70%;
+        }
+        100% {
+            left: 80%;
+        }
+    }
 	position: absolute;
 	top: 90%;
 	left: 80%;
@@ -792,83 +792,7 @@ nav{
 
 // CSS product
 .product{
-    @include font($fontJost);
-    max-width: 1680px;
-    padding: 40px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    grid-template-rows: auto auto auto;
-    column-gap: 30px;
-    row-gap: 30px;
-        .item{
-            .item-top{
-               @include item-top;
-            }
-            .item-center{
-                @include item-center;
-            }
-            .item-bottom{
-                height: 70px;
-                margin-top: -35px;
-                .item-bottom-color{
-                    height: 100%;
-                    position: relative;
-                    width: 27px;
-                    display: inline-block;
-                    margin-right: 5px;
-                    .color{
-                        position: absolute;
-                        bottom: 0;
-                        a{
-                            width: 27px;
-                            height: 27px;
-                            display: inline-block;
-                            border-radius: 50%; 
-                            transition: .15s;
-                            &:hover{
-                                border: 4px solid white;
-                                outline: 1px solid black;
-                            }
-                        }
-                    }
-                    .tooltip-text{
-                        position: absolute;
-                        bottom: 40%;
-                        left: -100%;
-                        height: 0;
-                        min-width: 90px;
-                        transition: .2s ease-in-out;
-                        font-size: 15px;
-                        overflow: hidden;
-                        span{
-                            display: block;
-                            margin: 0;
-                            padding: 3px;
-                            background-color: black;
-                            color: white;
-                            font-size: 14px;
-                            border-radius: 5px;
-                            box-shadow:  2px 4px 5px grey;
-                            text-align: center;
-                        }
-                        i{
-                            position: absolute;
-                            left: 40%;
-                            top: 40%;
-                        }
-                    }
-                    &:hover{
-                        cursor: pointer;
-                    }
-                    &:hover .tooltip-text{
-                        height: 70%;
-                        bottom: 35%;
-                    }
-                }
-               
-            }
-        }
+    @include product;
 }
 #seemore{
     @include font($fontJost);
@@ -1078,7 +1002,7 @@ transition: transform 0.4s;
     &:hover{
         cursor: pointer;
       }
-  }
+}
 
 
 @media screen and (max-width:1700px){

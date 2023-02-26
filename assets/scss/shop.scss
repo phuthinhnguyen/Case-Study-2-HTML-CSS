@@ -1,0 +1,303 @@
+@import "variable";
+@import "font";
+@import "mixin";
+
+body{
+    a{
+        @include link-decoration();
+    }
+    @include scrollbar(8px,transparent,black,black);
+}
+::selection{
+    background-color: black;
+    color: white;
+}
+
+//CSS breadcrumb
+.shop-head{
+    @include font($fontJost);
+    @include pagehead;
+}
+
+//CSS shopcontent
+.shop-toolbar{
+    @include font($fontJost);
+    max-width: 1680px;
+    margin: auto;
+    margin-top: 30px;
+    .row{
+        padding: 0 20px;
+        .left{
+            display: flex;
+            align-items: center;
+            >a{
+                padding: 5px 20px;
+                background-color: #f2f2f2;
+                border-radius: 3px;
+                transition: .4s;
+                &:hover{
+                    cursor: pointer;
+                    background-color: rgb(224, 224, 224);
+                    color: black;
+                }
+            }
+            >span{
+                font-size: 18px;
+                color: gray;
+                margin-left: 10px;
+            }
+            .dropdown-menu{
+                max-width: 1680px;
+                margin: auto;
+                margin-top: 60px;
+                padding: 30px;
+                box-shadow: 1px 1px 4px 2px lightgray;
+                border: none;
+                border-radius: 0;
+                @include filterdropdown;
+            }
+        }
+        .right{
+            display: flex;
+            justify-content: end;
+            .right-item1{
+                display: flex;
+                align-items: center;
+                margin-right: 10px;
+                div:first-of-type{
+                    select{
+                        border: none;
+                        font-weight: 500;
+                        margin-right: 10px;
+                    }
+                }
+                div:last-of-type{
+                    @include item-bottom;
+                    display: inline-block;
+                    margin-top: -14px;
+                    .item-bottom-color{
+                        .color{
+                            a{
+                                background-color: #f2f2f2;
+                                border-radius: 3px;
+                                width: 35px;
+                                height: 30px;
+                                display: inline-block;
+                                text-align: center;
+                                line-height: 30px;
+                               
+                                &:hover{
+                                    cursor: pointer;
+                                    background-color: rgb(224, 224, 224);
+                                    color: black;
+                                    border: none;
+                                    outline: none;
+                                }
+                            } 
+                        }
+                    }
+                   
+                }
+            }
+            .right-item2{
+                display: flex;
+                justify-content: center;
+                .item{
+                    @include item-bottom;
+                    display: inline-block;
+                    margin-top: -30px;
+                    .item-bottom-color{
+                        margin-right: 15px;
+                        .color{
+                            a{
+                                background-color: #f2f2f2;
+                                border-radius: 3px;
+                                width: 35px;
+                                height: 30px;
+                                display: inline-block;
+                                text-align: center;
+                                line-height: 30px;
+                                margin-right: 10px;
+                                &:hover{
+                                    cursor: pointer;
+                                    background-color: black;
+                                    border: none;
+                                    outline: none;
+                                    i{
+                                        color: white;
+                                    }
+                                    svg{
+                                        rect{
+                                            fill: white;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+       
+    }
+}
+.shop-toolbar-responsive{
+    >div{
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 50%;
+        transform: rotateZ(-90deg);
+        z-index: 1;
+        background-color: #f2f2f2;
+        padding: 6px 20px;
+        margin-left: -20px;
+        font-weight: 500;
+        box-shadow: .5px .5px 3px .5px lightgray;
+        &:hover{
+            cursor: pointer;
+            background-color: rgb(224, 224, 224);
+        }
+    }
+}
+.offcanvas-responsive{
+    @include font($fontJost);
+    overflow-y: auto;
+    @include scrollbar(3px,#ffffff,black,#555);
+    .offcanvas-header{
+        .menu-show{
+            @include filterdropdown;
+            padding-left: 10px;
+            h2{
+                font-weight: 400;
+                font-size: 38px;
+                margin-top: 20px;
+            }
+            .menu-show-close-filter{
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                font-size: 25px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            [class*="filter-dropdown-item"]{
+                margin-top: 40px;
+                min-height: 150px;
+                a:first-of-type{
+                    margin-top: 0;
+                }
+                a:last-of-type{
+                    font-weight: 500;
+                }
+                
+            }
+            .filter-dropdown-item1{
+                div{
+                    max-height: 250px;
+                    overflow-y: auto;
+                }
+            }
+            .filter-dropdown-item5{
+                margin-top: -20px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+.shop-product{
+    @include product;;
+}
+.shop-pagination{
+    @include font($fontJost);
+    display: flex;
+    justify-content: center;
+    column-gap: 15px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    a{
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgb(236, 234, 234);
+        line-height: 40px;
+        text-align: center;
+        &:hover{
+            color: white;
+            background-color: black;
+        }
+    }
+}
+
+@media screen and (max-width:1500px){
+    .shop-toolbar{
+        .row{
+            .right{
+                .right-item2{
+                    .grid5columns{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+   
+}
+@media screen and (max-width:1400px){
+    .shop-product{
+        grid-template-columns: auto auto auto auto;
+    }
+}
+@media screen and (max-width:992px){
+    .shop-toolbar{
+        .row{
+            .left{
+                display: none;
+            }
+            .right{
+                .right-item1{
+                    flex: 1;
+                }
+                .right-item2{
+                    .grid4columns{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .shop-toolbar-responsive{
+        >div{
+            display: block;
+        }
+    }
+    .shop-product{
+        grid-template-columns: auto auto auto;
+    }
+}
+@media screen and (max-width:768px){
+    .shop-product{
+        grid-template-columns: auto auto;
+    }
+}
+@media screen and (max-width:576px){
+    .shop-toolbar{
+        .row{
+            .right{
+                .right-item2{
+                    .grid3columns{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:500px){
+    .shop-product{
+        grid-template-columns: auto;
+    }
+}

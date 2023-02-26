@@ -628,48 +628,6 @@ nav .row .right i {
   font-size: 20px;
 }
 
-@keyframes imgwrap {
-  0% {
-    opacity: 0.3;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes imgtextp {
-  0% {
-    top: 30%;
-  }
-  100% {
-    top: 0;
-  }
-}
-@keyframes imgtexth1 {
-  0% {
-    display: block;
-    top: 70%;
-  }
-  100% {
-    display: block;
-    top: 10%;
-  }
-}
-@keyframes imgtexta {
-  0% {
-    top: 150%;
-  }
-  100% {
-    top: 90%;
-  }
-}
-@keyframes imgtextrecotton {
-  0% {
-    left: 70%;
-  }
-  100% {
-    left: 80%;
-  }
-}
 .img {
   position: relative;
   font-family: "Jost";
@@ -678,6 +636,14 @@ nav .row .right i {
 .img-wrap {
   position: relative;
   animation: imgwrap 4s;
+}
+@keyframes imgwrap {
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .img-wrap img {
   width: 100%;
@@ -718,6 +684,14 @@ nav .row .right i {
   top: 50%;
   transform: translate(0, -70%);
 }
+@keyframes imgtextp {
+  0% {
+    top: 30%;
+  }
+  100% {
+    top: 0;
+  }
+}
 .img-text p {
   position: absolute;
   top: 0;
@@ -744,6 +718,14 @@ nav .row .right i {
   animation: imgtexta 3s;
   transition: 0.5s;
 }
+@keyframes imgtexta {
+  0% {
+    top: 150%;
+  }
+  100% {
+    top: 90%;
+  }
+}
 .img-text a:hover {
   background-color: black;
   color: white;
@@ -755,6 +737,16 @@ nav .row .right i {
   animation: imgtexth1 3s;
   width: 600px;
 }
+@keyframes imgtexth1 {
+  0% {
+    display: block;
+    top: 70%;
+  }
+  100% {
+    display: block;
+    top: 10%;
+  }
+}
 
 .img-text-recotton {
   position: absolute;
@@ -762,6 +754,14 @@ nav .row .right i {
   left: 80%;
   font-size: 18px;
   animation: imgtextrecotton 3s;
+}
+@keyframes imgtextrecotton {
+  0% {
+    left: 70%;
+  }
+  100% {
+    left: 80%;
+  }
 }
 .img-text-recotton > p {
   display: inline-block;
@@ -949,7 +949,7 @@ nav .row .right i {
 .product {
   font-family: "Jost";
   max-width: 1680px;
-  padding: 40px;
+  padding: 40px 30px;
   margin: auto;
   display: grid;
   grid-template-columns: auto auto auto auto auto;
