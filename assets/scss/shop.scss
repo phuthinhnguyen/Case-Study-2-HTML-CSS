@@ -3,15 +3,9 @@
 @import "mixin";
 
 body{
-    a{
-        @include link-decoration();
-    }
     @include scrollbar(8px,transparent,black,black);
 }
-::selection{
-    background-color: black;
-    color: white;
-}
+
 
 //CSS breadcrumb
 .shop-head{
