@@ -110,6 +110,10 @@ nav{
         0% {width: 0;}
         100% {width: 130%;}
     }
+    @keyframes nav-dropdown-in{
+        0%{top:80px;opacity: 0;}
+        100%{top: 30px;opacity: 1;}
+      }
     .row{
         height: 70px;
         padding: 0 20px;
@@ -130,25 +134,45 @@ nav{
                     position: absolute;
                     background-color: white;
                     padding: 20px;
-                    animation: nav-dropdown-in 0.6s;
                     top:30px;
                     left: -20px;
-                    overflow-x: auto;
                     max-height: 650px;
                         .menu-dropdown-item{
                             #season{
                                 max-width: 500px;
                             }
-                            >a:not(#shopnow),>div>a{  
+                            >div:not(.menu-dropdown-item-product-wrap){
                                 width: 150px;
-                                display: block;
-                                color: gray;
-                                padding: 8px 10px;
-                                transition: .3s;
-                                user-select: none;
+                                height: 40px;
+                                display: flex;
+                                padding-left: 10px;
                                 &:hover:not(#hot,#new){
-                                    background-color: rgb(230, 228, 228);
-                                    color: black;
+                                            background-color: rgb(230, 228, 228);
+                                            color: black;
+                                            cursor: pointer;
+                                            a:not(#hot,#new){
+                                                color: black;
+                                            }
+                                        }
+                                >a:not(#hot,#new){
+                                    line-height: 40px;
+                                    color: gray;
+                                    transition: .3s;
+                                }
+                                #hot, #new{
+                                    background-color: rgb(236, 111, 111);
+                                    height: 25px;
+                                    margin-left: 5px;
+                                    border-radius: 10px;
+                                    color: white;
+                                    padding: 3px 8px;
+                                    width: 40px;
+                                    font-size: 12px;
+                                    font-weight: 500;
+                                    user-select: none;
+                                }
+                                #new{
+                                    background-color: rgb(15, 192, 133);
                                 }
                             }
                             >p{
@@ -166,69 +190,56 @@ nav{
                                         color: black;
                                     }
                             }
-                            div{
+                            .menu-dropdown-item-product-wrap{
+                                width: 460px;
+                                height: 360px;
                                 position: relative;
-                                #hot, #new{
-                                    display: inline-block;
-                                    background-color: rgb(236, 111, 111);
-                                    position: absolute;
-                                    border-radius: 10px;
-                                    color: white;
-                                    padding: 3px 8px;
-                                    width: 40px;
-                                    top:0;
-                                    left: 55%;
-                                    font-size: 12px;
-                                    font-weight: 500;
-                                    user-select: none;
-                                }
-                                #new{
-                                    background-color: rgb(15, 192, 133);
-                                    left: 70%;
-                                }
-                            }
-                            .menu-dropdown-item-product{
-                                padding: 40px;
-                                display: grid;
-                                column-gap: 5px;
-                                grid-template-columns: auto auto;
-                                position: relative;
-                                max-width: 450px;
-                                .item{
-                                    .item-top{
-                                       @include item-top;
-                                       img{
-                                        max-width: 180px;
-                                        }
-                                        &:hover .overlay-item2{
-                                            right: 20px;
-                                            top:0;
-                                            width: 180px;
-                                        }
-                                        &:hover .overlay-item1{
-                                            height: 30%;
-                                        }
-                                        .overlay-item1{
-                                            .addtocard{
-                                                width: 80%;
-                                                left: 45%;
-                                                height: 45%;
-                                                line-height: 45%;
-                                                font-size: 14px;
+                                padding: 35px;
+                                .menu-dropdown-item-product{
+                                    width: 400px;
+                                    display: flex;
+                                    overflow: hidden;
+                                    scroll-behavior: smooth;
+                                    scroll-snap-align: start;
+                                    column-gap: 5px;
+                                    .item{
+                                        flex: 1;
+                                        .item-top{
+                                           @include item-top;
+                                           img{
+                                                max-width: 180px;
                                             }
-                                        }
-                                        .overlay-item2{
-                                            div{
-                                                a{
-                                                    width: 35px;
-                                                    height: 35px;
+                                            &:hover .overlay-item2{
+                                                right: 20px;
+                                                top:0;
+                                                width: 180px;
+                                            }
+                                            &:hover .overlay-item1{
+                                                height: 30%;
+                                            }
+                                            .overlay-item1{
+                                                .addtocard{
+                                                    width: 80%;
+                                                    left: 45%;
+                                                    height: 45%;
+                                                    line-height: 45%;
+                                                    font-size: 14px;
+                                                }
+                                            }
+                                            .overlay-item2{
+                                                div{
+                                                    a{
+                                                        width: 35px;
+                                                        height: 35px;
+                                                    }
                                                 }
                                             }
                                         }
+                                        .item-center{
+                                            @include item-center;
+                                        }
                                     }
-                                    .item-center{
-                                        @include item-center;
-                                    }
+                                  
                                 }
                                 #arrow-left,#arrow-right{
                                     @include arrow-left-right;
@@ -243,15 +254,14 @@ nav{
                                     display: flex;
                                 }
                             }
+                          
                             #weekhighlight{
                                 text-align: center;
                                 font-weight: 500;
                             }
                           
                         }
-                     
                     }
-                  
                 .menu-dropdown-page{
                     display: none;
                     position: absolute;
@@ -275,11 +285,13 @@ nav{
                 }
                 &:hover .menu-dropdown-page{
                     display: block;
+                    animation: nav-dropdown-in 0.6s;
                 }
                 &:hover .menu-dropdown{
                     display: flex;
                     flex-direction: row;
                     column-gap: 20px;
+                    animation: nav-dropdown-in 0.6s;
                 }
                 >a{
                     position: relative;
@@ -306,7 +318,6 @@ nav{
             li:first-child{
                 margin-left: 0;
             }
-        
         }
         .menu{
             display: none;
@@ -645,6 +656,10 @@ nav{
     overflow: hidden;
     margin: auto;
     margin-right: 0;
+    overflow-x: auto;
+    scroll-snap-type: x;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* for firefox */
     .item{
         position: relative;
         min-width: 410px;
@@ -659,6 +674,12 @@ nav{
         }
         img{
             transition: .5s;
+            user-drag: none; 
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
         }
         .text{
             width: 100%;
@@ -694,6 +715,9 @@ nav{
             }
         }
     }
+    &::-webkit-scrollbar{ /* for chrome */
+        display: none;
+      }
 }
 
 
@@ -1053,9 +1077,9 @@ transition: transform 0.4s;
                                     max-width: 350px;
                                 }
                                 .menu-dropdown-item-product{
-                                    max-width: 300px;
+                                    max-width: 460px;
                                     &:hover #arrow-left, &:hover #arrow-right{
-                                        display: none;
+                                      
                                     }
                                 }
                             }
