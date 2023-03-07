@@ -688,12 +688,6 @@ nav .row .right i {
   margin-left: auto;
   margin-right: auto;
 }
-.img-nav a:first-of-type {
-  background-color: white;
-  border: 1px solid black;
-  width: 14px;
-  height: 14px;
-}
 
 .img-text {
   position: absolute;
