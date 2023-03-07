@@ -5,6 +5,19 @@ body a {
 body a:hover {
   color: lightgray;
 }
+body ::-webkit-scrollbar {
+  width: 8px;
+}
+body ::-webkit-scrollbar-track {
+  background: transparent;
+}
+body ::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 5px;
+}
+body ::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
 
 ::-moz-selection {
   background-color: black;
@@ -499,6 +512,7 @@ nav .row .menu i {
 nav .row .offcanvas {
   padding: 0;
   width: 380px;
+  overflow-y: auto;
 }
 nav .row .offcanvas-header .menu-show-wrap {
   padding: 20px;
@@ -524,6 +538,13 @@ nav .row .offcanvas-header .menu-show-wrap .menu-show-item a:last-of-type {
 }
 nav .row .offcanvas-header .menu-show-wrap .menu-show-item a:hover {
   color: rgb(182, 180, 180);
+}
+nav .row .offcanvas-header .menu-show-wrap .menu-show-item-dropdown .item {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 nav .row .offcanvas-header .menu-show-wrap .menu-show-item-myaccount {
   margin-top: 60px;

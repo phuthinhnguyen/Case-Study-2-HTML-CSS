@@ -40,16 +40,7 @@ body{
                 color: gray;
                 margin-left: 10px;
             }
-            .dropdown-menu{
-                max-width: 1680px;
-                margin: auto;
-                margin-top: 60px;
-                padding: 30px;
-                box-shadow: 1px 1px 4px 2px lightgray;
-                border: none;
-                border-radius: 0;
-                @include filterdropdown;
-            }
+            
         }
         .right{
             display: flex;
@@ -136,6 +127,21 @@ body{
        
     }
 }
+.filter-dropdown-container{
+    max-width: 1680px;
+    margin: auto;
+    padding: 0 30px;
+    margin-top: 10px;
+    .filter-dropdown{
+        @include font($fontJost);
+        box-shadow: 1px 1px 4px 2px lightgray;
+        border: none;
+        border-radius: 0;
+        padding: 30px;
+        @include filterdropdown;
+    }
+}
+
 .shop-toolbar-responsive{
     >div{
         display: none;
@@ -185,6 +191,9 @@ body{
                 }
                 a:last-of-type{
                     font-weight: 500;
+                }
+                #filter-dropdown-item2-last{
+                    font-weight: 400;
                 }
                 
             }

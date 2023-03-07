@@ -331,30 +331,121 @@
                 <div class="offcanvas-header">
                     <div class="menu-show">
                         <div class="menu-show-wrap">
-                            <div class="menu-show-item">
+                            <div class="menu-show-item" data-itemid="item1">
                                 <a href="index.html">Demo</a>
                                 <a id="plus"><i class="fa-sharp fa-solid fa-plus"></i></a>
                                 <a id="minus"><i class="fa fa-minus"></i></a>
                             </div>
-                            <div class="menu-show-item">
+                            <div class="menu-show-item-dropdown" id="item1">
+                                <div class="item">
+                                    <a href="">Fashion</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Fashion</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Minimog Store</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Header Layout</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Header Layout</a>
+                                </div>
+                            </div>
+                            <div class="menu-show-item" data-itemid="item2">
                                 <a href="shop.html">Shop</a>
                                 <a id="plus"><i class="fa-sharp fa-solid fa-plus"></i></a>
                                 <a id="minus"><i class="fa fa-minus"></i></a>
                             </div>
-                            <div class="menu-show-item">
+                            <div class="menu-show-item-dropdown" id="item2">
+                                <div class="item">
+                                    <a href="">Shop Pages</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Shop Sidebar</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Features</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Hover Style</a>
+                                </div>
+                            </div>
+                            <div class="menu-show-item" data-itemid="item3">
                                 <a href="product.html">Product</a>
                                 <a id="plus"><i class="fa-sharp fa-solid fa-plus"></i></a>
                                 <a id="minus"><i class="fa fa-minus"></i></a>
                             </div>
-                            <div class="menu-show-item">
+                            <div class="menu-show-item-dropdown" id="item3">
+                                <div class="item">
+                                    <a href="">Product Layout</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Product Detail</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Product Type</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Product Features</a>
+                                </div>
+                            </div>
+                            <div class="menu-show-item" data-itemid="item4">
                                 <a href="">Blog</a>
                                 <a id="plus"><i class="fa-sharp fa-solid fa-plus"></i></a>
                                 <a id="minus"><i class="fa fa-minus"></i></a>
                             </div>
-                            <div class="menu-show-item">
+                            <div class="menu-show-item-dropdown" id="item4">
+                                <div class="item">
+                                    <a href="">Post List</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Grid 3 Columns</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Grid 4 Columns</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Grid With Sidebar</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Single Post 1</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Single Post 2</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Single Post 3</a>
+                                </div>
+                            </div>
+                            <div class="menu-show-item" data-itemid="item5">
                                 <a href="">Page</a>
                                 <a id="plus"><i class="fa-sharp fa-solid fa-plus"></i></a>
                                 <a id="minus"><i class="fa fa-minus"></i></a>
+                            </div>
+                            <div class="menu-show-item-dropdown" id="item5">
+                                <div class="item">
+                                    <a href="">About V1</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">About V2</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">About V3</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">FAQs</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">404 Page</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Contact Us</a>
+                                </div>
+                                <div class="item">
+                                    <a href="">Find A Store</a>
+                                </div>
                             </div>
                             <div class="menu-show-item-myaccount">
                                 <i class="fa-regular fa-user" aria-hidden="true"></i><span>My Account</span>
@@ -365,9 +456,18 @@
                         <div class="menu-show-close"><i class="fa-solid fa-xmark"></i></div>
                     </div>
                 </div>
+                <script>
+                    $(".menu-show-item-dropdown").hide();
+                    $(".menu-show-item").click(function name(params) {
+                        $(this).children("#plus").toggle();
+                        $(this).children("#minus").toggle();
+                        let itemid = $(this).data("itemid");
+                        $("#"+itemid).slideToggle();
+                    })
+                </script>
             </div>
             <div class="col-4 text-center center">
-                <img src="assets/images/home/dark-logo_1n.png" alt="">
+                <img src="assets/images/home/dark-logo_1n.png" alt="" onclick="window.location.href='index.html'">
             </div>
             <div class="col-4 right">
                 <ul>
@@ -1266,12 +1366,12 @@
                     <a href="">Wishlist</a>
                     <a href="">Check out</a>
                 </div>
-                <div class="contact-responsive-item information-menu">
+                <div class="contact-responsive-item information-menu" data-contactid="contactitem1">
                     <h2>Information</h2>
                     <a id="plus"><i class="fa-sharp fa-solid fa-plus"></i></a>
                     <a id="minus"><i class="fa fa-minus"></i></a>
                 </div>
-                <div class="infomation">
+                <div class="infomation" id="contactitem1">
                     <a href="">My account</a>
                     <a href="">Login</a>
                     <a href="">My cart</a>
@@ -1288,12 +1388,12 @@
                     <a href="">Contact us</a>
                     <a href="">Delivery Information</a>
                 </div>
-                <div class="contact-responsive-item services-menu">
+                <div class="contact-responsive-item services-menu" data-contactid="contactitem2">
                     <h2>Services</h2>
                     <a id="plus"><i class="fa-sharp fa-solid fa-plus"></i></a>
                     <a id="minus"><i class="fa fa-minus"></i></a>
                 </div>
-                <div class="services">
+                <div class="services" id="contactitem2">
                     <a href="">About Us</a>
                     <a href="">Privacy Policy</a>
                     <a href="">Faq's</a>
@@ -1311,34 +1411,15 @@
         </div> 
     </div>
     <script>
-        let informationmenuindex=0;
-        let servicesmenuindex=0;
         $(".contact-responsive-item").children("#minus").hide();
-        $(".information-menu").click(function name(params) {
-            $(".infomation").slideToggle();
-            informationmenuindex++;
-            if (informationmenuindex%2!=0){
-                $(this).children("#plus").css({"display":"none"});
-                $(this).children("#minus").css({"display":"block"});
-            }
-            else{
-                $(this).children("#plus").css({"display":"block"});
-                $(this).children("#minus").css({"display":"none"});
-             }
-        })
-        $(".services-menu").click(function name(params) {
-            $(".services").slideToggle();
-            servicesmenuindex++;
-            if (servicesmenuindex%2!=0){
-                $(this).children("#plus").css({"display":"none"});
-                $(this).children("#minus").css({"display":"block"});
-            }
-            else{
-                $(this).children("#plus").css({"display":"block"});
-                $(this).children("#minus").css({"display":"none"});
-             }
+        $(".contact-responsive-item").click(function name(params) {
+            $(this).children("#plus").toggle();
+            $(this).children("#minus").toggle();
+            let contactid = $(this).data("contactid");
+            $("#"+contactid).slideToggle();
         })
     </script>
+
     <!-- footer -->
     <footer class="container-fluid">
         <div class="row">

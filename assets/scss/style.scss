@@ -6,6 +6,7 @@ body{
     a{
         @include link-decoration();
     }
+    @include scrollbar(8px,transparent,black,black);
 }
 ::selection{
     background-color: black;
@@ -332,6 +333,7 @@ nav{
         .offcanvas{
             padding: 0;
             width: 380px;
+            overflow-y: auto;
         }
         .offcanvas-header{
             .menu-show-wrap{
@@ -356,6 +358,15 @@ nav{
                         &:hover{
                             color: $a-hover;
                         }
+                    }
+                }
+                .menu-show-item-dropdown{
+                    .item{
+                        width: 300px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 10px 20px;
                     }
                 }
                 .menu-show-item-myaccount{
