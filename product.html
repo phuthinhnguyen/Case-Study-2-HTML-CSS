@@ -595,6 +595,23 @@
                         <button>Add to Cart</button>
                     </div>
                 </div>
+                <script>
+                    let valueaddtocard = 1;
+                    let showaddtocard = document.getElementById("showaddtocard");
+                    let minus = document.getElementById("product-minus");
+                    let plus = document.getElementById("product-plus");
+                    plus.addEventListener("click",function() {
+                        valueaddtocard++;
+                        showaddtocard.value=valueaddtocard;
+                    })
+                    minus.addEventListener("click",function name(params) {
+                        valueaddtocard--;
+                        if (valueaddtocard<2){
+                            valueaddtocard=1;
+                        }
+                        showaddtocard.value=valueaddtocard;
+                    })
+                </script>
                 <div class="right-buyitnow">
                     <button>Buy It Now</button>
                     <div>

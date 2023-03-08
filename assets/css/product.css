@@ -399,6 +399,9 @@
 .product-show .row .right .right-buyitnow > div div a {
   transition: 0.4s;
 }
+.product-show .row .right .right-buyitnow > div div a:hover {
+  color: rgb(182, 180, 180);
+}
 .product-show .row .right hr {
   border: none;
   background-color: rgb(161, 160, 160);
