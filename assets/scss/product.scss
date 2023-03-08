@@ -15,7 +15,13 @@
     max-width: 1200px;
     padding: 20px;
     margin: auto;
+    margin-top: 30px;
     .row{
+        position: relative;
+        a{
+            text-decoration: none;
+            color: black;
+        }
         .left{
             display: flex;
             flex-direction: row;
@@ -44,7 +50,7 @@
                             width: 100%;
                             height: auto;
                         }
-                        &:hover{
+                        &:hover,&:focus{
                             cursor: pointer;
                             outline: 1px solid black;
                             border: 5px solid white;
@@ -145,6 +151,7 @@
                     font-size: 18px;
                     background-color: white;
                     transition: .4s;
+               
                     &:hover{
                         background-color: black;
                         color: white;
@@ -365,8 +372,20 @@
                 }
             }
         }
-        
+        .img-zoom-lens {
+            position: absolute;
+            border: 1px solid #d4d4d4;
+            width: 150px;
+            height: 150px;
+        }
+        .img-zoom-result {
+            width: 40%;
+            height: 55%;
+            position: absolute;
+            left: 48%;
+        }
     }
+  
 }
 .product-details{
     @include font($fontJost);
