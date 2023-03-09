@@ -63,6 +63,7 @@
     }
 }
 .blog-pagination{
+    @include font($fontJost);
     max-width: 900px;
     height: 60px;
     margin: auto;
