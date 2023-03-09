@@ -1,0 +1,16 @@
+.blog-head {
+  font-family: "Jost";
+  text-align: center;
+  margin-top: 50px;
+}
+.blog-head h1 {
+  font-weight: 400;
+  font-size: 40px;
+}
+.blog-head div {
+  display: inline-block;
+}
+.blog-head div a:hover {
+  color: black;
+  text-decoration: underline;
+}/*# sourceMappingURL=blog-10picnic.css.map */
