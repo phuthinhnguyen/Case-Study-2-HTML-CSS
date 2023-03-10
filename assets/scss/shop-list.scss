@@ -1,0 +1,375 @@
+@import "variable";
+@import "font";
+@import "mixin";
+
+body{
+    @include scrollbar(8px,transparent,black,black);
+}
+
+
+//CSS breadcrumb
+.shop-list-head{
+    @include font($fontJost);
+    @include pagehead;
+}
+
+//CSS shop-listcontent
+.shop-list-toolbar{
+    @include font($fontJost);
+    max-width: 1680px;
+    margin: auto;
+    margin-top: 30px;
+    .row{
+        padding: 0 20px;
+        .left{
+            display: flex;
+            align-items: center;
+            >a{
+                padding: 5px 20px;
+                background-color: #f2f2f2;
+                border-radius: 3px;
+                transition: .4s;
+                &:hover{
+                    cursor: pointer;
+                    background-color: rgb(224, 224, 224);
+                    color: black;
+                }
+            }
+            >span{
+                font-size: 18px;
+                color: gray;
+                margin-left: 10px;
+            }
+            
+        }
+        .right{
+            display: flex;
+            justify-content: end;
+            .right-item1{
+                display: flex;
+                align-items: center;
+                margin-right: 10px;
+                div:first-of-type{
+                    select{
+                        border: none;
+                        font-weight: 500;
+                        margin-right: 10px;
+                    }
+                }
+                div:last-of-type{
+                    @include item-bottom;
+                    display: inline-block;
+                    margin-top: -14px;
+                    .item-bottom-color{
+                        .color{
+                            a{
+                                background-color: #f2f2f2;
+                                border-radius: 3px;
+                                width: 35px;
+                                height: 30px;
+                                display: inline-block;
+                                text-align: center;
+                                line-height: 30px;
+                               
+                                &:hover{
+                                    cursor: pointer;
+                                    background-color: rgb(224, 224, 224);
+                                    color: black;
+                                    border: none;
+                                    outline: none;
+                                }
+                            } 
+                        }
+                    }
+                   
+                }
+            }
+            .right-item2{
+                display: flex;
+                justify-content: center;
+                .item{
+                    @include item-bottom;
+                    display: inline-block;
+                    margin-top: -30px;
+                    .item-bottom-color{
+                        margin-right: 15px;
+                        .color{
+                            a{
+                                background-color: #f2f2f2;
+                                border-radius: 3px;
+                                width: 35px;
+                                height: 30px;
+                                display: inline-block;
+                                text-align: center;
+                                line-height: 30px;
+                                margin-right: 10px;
+                                &:hover{
+                                    cursor: pointer;
+                                    background-color: black;
+                                    border: none;
+                                    outline: none;
+                                    i{
+                                        color: white;
+                                    }
+                                    svg{
+                                        rect{
+                                            fill: white;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+       
+    }
+}
+.filter-dropdown-container{
+    max-width: 1680px;
+    margin: auto;
+    padding: 0 30px;
+    margin-top: 10px;
+    .filter-dropdown{
+        @include font($fontJost);
+        box-shadow: 1px 1px 4px 2px lightgray;
+        border: none;
+        border-radius: 0;
+        padding: 30px;
+        @include filterdropdown;
+    }
+}
+
+.shop-list-toolbar-responsive{
+    >div{
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 50%;
+        transform: rotateZ(-90deg);
+        z-index: 1;
+        background-color: #f2f2f2;
+        padding: 6px 20px;
+        margin-left: -20px;
+        font-weight: 500;
+        box-shadow: .5px .5px 3px .5px lightgray;
+        &:hover{
+            cursor: pointer;
+            background-color: rgb(224, 224, 224);
+        }
+    }
+}
+.offcanvas-responsive{
+    @include font($fontJost);
+    overflow-y: auto;
+    @include scrollbar(3px,#ffffff,black,#555);
+    .offcanvas-header{
+        .menu-show{
+            @include filterdropdown;
+            padding-left: 10px;
+            h2{
+                font-weight: 400;
+                font-size: 38px;
+                margin-top: 20px;
+            }
+            .menu-show-close-filter{
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                font-size: 25px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            [class*="filter-dropdown-item"]{
+                margin-top: 40px;
+                min-height: 150px;
+                a:first-of-type{
+                    margin-top: 0;
+                }
+                a:last-of-type{
+                    font-weight: 500;
+                }
+                #filter-dropdown-item2-last{
+                    font-weight: 400;
+                }
+                
+            }
+            .filter-dropdown-item1{
+                div{
+                    max-height: 250px;
+                    overflow-y: auto;
+                }
+            }
+            .filter-dropdown-item5{
+                margin-top: -20px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+.shop-list-container{
+    margin-top: 20px;
+    .shop-list-item{
+        display: flex;
+        margin-bottom: 20px;
+        .shop-list-item-left{
+            width: 250px;
+            position: relative;
+            cursor: pointer;
+            img{
+                width: 100%;
+                height: auto;
+            }
+            .overlay-item3{
+                position: absolute;
+                bottom: 1%;
+                overflow: hidden;
+                width: 100%;
+                height:0;
+                transition: .5s ease;
+                user-select: none;
+            }
+            &:hover .overlay-item3{
+                bottom: 0;
+                height: 100%;
+              }
+        }
+        .shop-list-item-right{
+            width: 80%;
+            padding: 5px 5px 5px 20px;
+            a{
+                &:first-of-type{
+                    font-size: 22px;
+                    font-weight: 500;
+                    transition: .3s;
+                    &:hover{
+                        color: rgb(168, 166, 166);
+                    }
+                }
+            }
+            >p{
+                color: gray;
+                margin-top: 10px;
+                font-size: 16px;
+                margin-bottom: 0;
+                line-height: 25px;
+                &:first-of-type{
+                    font-weight: 500;
+                    color: black;
+                    margin-top: 15px;
+                }
+                &:last-of-type{
+                    margin-bottom: 10px;
+                }
+            }
+            .shop-list-item-right-color{
+                margin-bottom: 10px;
+                @include item-bottom;
+            }
+            .shop-list-item-right-foot{
+                @include item-bottom;
+                button{
+                    padding: 12px 50px;
+                    color: white;
+                    background-color: black;
+                    border-radius: 5px;
+                    transition: transform .5s;
+                    &:hover{
+                        cursor: pointer;
+                        transform: scale(1.03);
+                    }
+                }
+            }
+        }
+    }
+
+    
+}
+
+
+.shop-list-pagination{
+    @include font($fontJost);
+    display: flex;
+    justify-content: center;
+    column-gap: 15px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    a{
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgb(236, 234, 234);
+        line-height: 40px;
+        text-align: center;
+        &:hover{
+            color: white;
+            background-color: black;
+        }
+    }
+}
+
+@media screen and (max-width:1500px){
+    .shop-list-toolbar{
+        .row{
+            .right{
+                .right-item2{
+                    .grid5columns{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+   
+}
+@media screen and (max-width:1400px){
+  
+}
+@media screen and (max-width:992px){
+    .shop-list-toolbar{
+        .row{
+            .left{
+                display: none;
+            }
+            .right{
+                .right-item1{
+                    flex: 1;
+                }
+                .right-item2{
+                    .grid4columns{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .shop-list-toolbar-responsive{
+        >div{
+            display: block;
+        }
+    }
+   
+}
+@media screen and (max-width:768px){
+  
+}
+@media screen and (max-width:576px){
+    .shop-list-toolbar{
+        .row{
+            .right{
+                .right-item2{
+                    .grid3columns{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:500px){
+    
+}

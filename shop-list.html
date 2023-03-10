@@ -6,60 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/shop-list.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <title>404 Not Found</title>
-    <style>
-        .page-content{
-            font-family: "Jost";
-            max-width: 1200px;
-            padding: 20px;
-            margin: auto;
-            margin-top: 30px;
-        }
-        .page-content-wrap{
-            width: 100%; 
-            text-align: center;
-        }
-        .page-content-wrap .img{
-            width: 60px;
-            height: 60px;
-            left: 50%;
-            transform: translate(-50%);
-        }
-        .page-content-wrap .img img{
-            width: 100%;
-            height: auto;
-        }
-        .page-content-wrap>h1{
-            font-size: 70px;
-            margin: 0;
-            font-weight: 500;
-            margin-top: 20px;
-        }
-        .page-content-wrap h1:last-of-type{
-            font-weight: 300;
-            font-size: 60px;
-            margin-top: 20px;
-        }
-        .page-content-wrap button{
-            padding: 10px 25px;
-            margin-top: 40px;
-            height: 45px;
-            background-color: black;
-            color: white;
-            border-radius: 5px;
-            transition: transform 0.3s;
-            margin-bottom: 30px;
-        }
-        .page-content-wrap button:hover{
-            cursor: pointer;
-            transform: scale(1.05);
-        }
-    </style>
+    <title>Shop</title>
 </head>
 <body>
     <!-- Top -->
@@ -527,17 +480,594 @@
             </div>
         </div>
     </nav>
-
-    <!-- page content -->
-    <div class="page-content">
-        <div class="page-content-wrap">
-            <div class="img">
-                <img src="assets/images/404page/404-image.png" alt="">
-            </div>
-            <h1>Oops!</h1>
-            <h1>Page not found!</h1>
-            <button onclick="window.location.href='index.html'">Go to Home</button>
+    
+    
+    <!-- breadcrumb -->
+    <div class="shop-list-head">
+        <h1>Shop</h1>
+        <div class="bcrumb" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Shop</li>
+            </ol>
         </div>
+    </div>
+   
+    <!-- shopcontent -->
+    <div class="shop-list-toolbar container-fluid">
+        <div class="row">
+            <div class="col-lg-3 left">
+                <a id="filterbutton">Filter</a>
+                <span>Items 1-15 of 30</span>
+            </div>
+            <div class="col-lg-9 col-12 right">
+                <div class="right-item1">
+                    <div>
+                        <select name="" id="">
+                            <option value="">Position</option>
+                            <option value="">Product Name</option>
+                            <option value="">Price</option>
+                            <option value="">Color</option>
+                            <option value="">Brand Product</option>
+                            <option value="">Size</option>
+                        </select>
+                    </div>
+                    <div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a href=""><i class="fa-solid fa-arrow-up-wide-short"></i></a> 
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Sort</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-item2">
+                    <div class="item">
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a href="#"><i class="fa-solid fa-bars"></i></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>List</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a href="#">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="6.25" y="1.75" width="1.75" height="12.5" rx="0.75" fill="#000000"></rect>
+                                        <rect x="10.25" y="1.75" width="1.75" height="12.5" rx="0.75" fill="#000000"></rect>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>2 Columns</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item grid3columns">
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a href="#">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="4.25" y="1.75" width="1.75" height="12.5" rx="0.75" fill="#000000"></rect>
+                                        <rect x="8.25" y="1.75" width="1.75" height="12.5" rx="0.75" fill="#000000"></rect>
+                                        <rect x="12.25" y="1.75" width="1.75" height="12.5" rx="0.75" fill="#000000"></rect>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>3 Columns</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item grid4columns">
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a href="#">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2.25" y="1.75" width="1.75" height="12.5" rx="0.75" fill="#000000"></rect>
+                                        <rect x="6.25" y="1.75" width="1.75" height="12.5" rx="0.75" fill="#000000"></rect>
+                                        <rect x="10.25" y="1.75" width="1.75" height="12.5" rx="0.75" fill="#000000"></rect>
+                                        <rect x="14.25" y="1.75" width="1.75" height="12.5" rx="0.75" fill="#000000"></rect>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>4 Columns</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item grid5columns">
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a href="#">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="0.25" y="1.75" width="1.75" height="12.5" rx="0.75" fill="#000000"></rect>
+                                        <rect x="4.25" y="1.75" width="1.75" height="12.5" rx="0.75" fill="#000000"></rect>
+                                        <rect x="8.25" y="1.75" width="1.75" height="12.5" rx="0.75" fill="#000000"></rect>
+                                        <rect x="12.25" y="1.75" width="1.75" height="12.5" rx="0.75" fill="#000000"></rect>
+                                        <rect x="16.25" y="1.75" width="1.75" height="12.5" rx="0.75" fill="#000000"></rect>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>5 Columns</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="filter-dropdown-container">
+        <div class="container-fluid filter-dropdown">
+            <div class="row">
+                <div class="filter-dropdown-item1 col-2">
+                    <p>Category</p>
+                    <div class="filter-dropdown-item1-content">
+                        <a href="#">Sneakers</a><span> (8)</span><br>
+                        <a href="#">Leather Bag</a><span> (5)</span><br>
+                        <a href="#">Shoes</a><span> (10)</span><br>
+                        <a href="#">Blazers</a><span> (8)</span><br>
+                        <a href="#">Tops</a><span> (9)</span><br>
+                        <a href="#">Glasses</a><span> (6)</span><br>
+                        <a href="#">Sandals</a><span> (11)</span><br>
+                        <a href="#">Basic</a><span> (10)</span><br>
+                        <a href="#">Jackets</a><span> (2)</span><br>
+                        <a href="#">Show More</a>
+                    </div>
+                </div>
+                <div class="filter-dropdown-item2 col-3">
+                    <p>Size</p>
+                    <div>
+                        <a href="">XS</a>
+                        <a href="">S</a>
+                        <a href="">M</a>
+                        <a href="">L</a>
+                        <a href="">XL</a>
+                        <a href="">36</a>
+                        <a href="">37</a>
+                        <a href="">38</a>
+                        <a href="">39</a>
+                    </div>
+                </div>
+                <div class="filter-dropdown-item3 col-3">
+                    <p>Color</p>
+                    <div class="item-bottom">
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color: #90A87B"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Green</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:#E4E0D4"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Beige</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color: white;border: 1px solid lightgray;"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>White</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:#8DB5D1"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Light Blue</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:#143F66"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Dark Blue</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:#C6AFC4"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Light Purple</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:#836A53"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Brown</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:black"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Black</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:grey"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Grey</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:#EADED9"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Light Pink</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:rgb(31, 53, 252)"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Blue</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:darkgoldenrod"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Dark Yellow</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:rgb(143, 103, 43)"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Dark Brown</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                      
+                    </div>
+                    
+                </div>
+                <div class="filter-dropdown-item4 col-2">
+                    <p>Price</p>
+                    <div class="display">
+                        <span id="min">10$</span>
+                        <span id="max">100$</span>
+                    </div>
+                    <div class="range-slide">
+                        <div class="slide">
+                          <div class="line" id="line" style="left: 0%; right: 0%;"></div>
+                          <span class="thumb" id="thumbMin" style="left: 0%;"></span>
+                          <span class="thumb" id="thumbMax" style="left: 100%;"></span>
+                        </div>
+                        <input id="rangeMin" type="range" max="100" min="10" step="1" value="10">
+                        <input id="rangeMax" type="range" max="100" min="10" step="1" value="100">
+                    </div>
+                    <script>
+                        let min = 10;
+                        let max = 100;
+                        const calcLeftPosition = value => 100 / (100 - 10) *  (value - 10);
+                        $('#rangeMin').on('input', function(e) {
+                        const newValue = parseInt(e.target.value);
+                        if (newValue > max) return;
+                        min = newValue;
+                        $('#thumbMin').css('left', calcLeftPosition(newValue) + '%');
+                        $('#min').html(newValue + "$");
+                        $('#line').css({
+                            'left': calcLeftPosition(newValue) + '%',
+                            'right': (100 - calcLeftPosition(max)) + '%'
+                        });
+                        });
+                        $('#rangeMax').on('input', function(e) {
+                        const newValue = parseInt(e.target.value);
+                        if (newValue < min) return;
+                        max = newValue;
+                        $('#thumbMax').css('left', calcLeftPosition(newValue) + '%');
+                        $('#max').html(newValue + "$");
+                        $('#line').css({
+                            'left': calcLeftPosition(min) + '%',
+                            'right': (100 - calcLeftPosition(newValue)) + '%'
+                        });
+                        });
+                    </script>
+                </div>
+                <div class="filter-dropdown-item5 col-2">
+                    <p>Brand Product</p>
+                    <input type="checkbox" name="" id=""><a href="">Aby</a><span> (6)</span><br>
+                    <input type="checkbox" name="" id=""><a href="">Chanel</a><span> (7)</span><br>
+                    <input type="checkbox" name="" id=""><a href="">HM</a><span> (3)</span><br>
+                    <input type="checkbox" name="" id=""><a href="">Zara</a><span> (5)</span><br>
+                    <a href="#">Show More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(".filter-dropdown").hide();
+        $("#filterbutton").click(function name(params) {
+            $(".filter-dropdown").slideToggle();
+        })
+    </script>
+    <div class="shop-list-toolbar-responsive" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions1">
+        <div>Filter</div>
+    </div>
+    <div class="offcanvas offcanvas-start offcanvas-responsive" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions1" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+            <div class="menu-show">
+                <h2>Filter</h2>
+                <div class="filter-dropdown-item1">
+                    <p>Category</p>
+                    <div>
+                        <a href="#">Sneakers</a><span> (8)</span><br>
+                        <a href="#">Leather Bag</a><span> (5)</span><br>
+                        <a href="#">Shoes</a><span> (10)</span><br>
+                        <a href="#">Blazers</a><span> (8)</span><br>
+                        <a href="#">Tops</a><span> (9)</span><br>
+                        <a href="#">Glasses</a><span> (6)</span><br>
+                        <a href="#">Sandals</a><span> (11)</span><br>
+                        <a href="#">Basic</a><span> (10)</span><br>
+                        <a href="#">Jackets</a><span> (2)</span><br>
+                        <a href="#">Show More</a>
+                    </div>
+                </div>
+                <div class="filter-dropdown-item2">
+                    <p>Size</p>
+                    <div>
+                        <a href="">XS</a>
+                        <a href="">S</a>
+                        <a href="">M</a>
+                        <a href="">L</a>
+                        <a href="">XL</a>
+                        <a href="">36</a>
+                        <a href="">37</a>
+                        <a href="">38</a>
+                        <a href="" id="filter-dropdown-item2-last">39</a>
+                    </div>
+                </div>
+                <div class="filter-dropdown-item3">
+                    <p>Color</p>
+                    <div class="item-bottom">
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color: #90A87B"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Green</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:#E4E0D4"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Beige</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color: white;border: 1px solid lightgray;"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>White</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:#8DB5D1"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Light Blue</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:#143F66"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Dark Blue</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:#C6AFC4"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Light Purple</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:#836A53"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Brown</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:black"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Black</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:grey"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Grey</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:#EADED9"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Light Pink</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:rgb(31, 53, 252)"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Blue</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:darkgoldenrod"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Dark Yellow</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class="item-bottom-color">
+                            <div class="color">
+                                <a style="background-color:rgb(143, 103, 43)"></a>
+                            </div>
+                            <div class="tooltip-text">
+                                <span>Dark Brown</span><i class="fa-solid fa-caret-down"></i>
+                            </div>
+                        </div>
+                      
+                    </div>
+                    
+                </div>
+                <div class="filter-dropdown-item4">
+                    <p>Price</p>
+                    <div class="display">
+                        <span id="min-responsive">10$</span>
+                        <span id="max-responsive">100$</span>
+                    </div>
+                    <div class="range-slide">
+                        <div class="slide">
+                          <div class="line" id="line-responsive" style="left: 0%; right: 0%;"></div>
+                          <span class="thumb" id="thumbMin-responsive" style="left: 0%;"></span>
+                          <span class="thumb" id="thumbMax-responsive" style="left: 100%;"></span>
+                        </div>
+                        <input id="rangeMin-responsive" type="range" max="100" min="10" step="1" value="10">
+                        <input id="rangeMax-responsive" type="range" max="100" min="10" step="1" value="100">
+                    </div>
+                    <script>
+                        let minresponsive = 10;
+                        let maxresponsive = 100;
+                        const calcLeftPositionresponsive = value => 100 / (100 - 10) *  (value - 10);
+                        $('#rangeMin-responsive').on('input', function(e) {
+                        const newValue = parseInt(e.target.value);
+                        if (newValue > max) return;
+                        minresponsive = newValue;
+                        $('#thumbMin-responsive').css('left', calcLeftPositionresponsive(newValue) + '%');
+                        $('#min-responsive').html(newValue + "$");
+                        $('#line-responsive').css({
+                            'left': calcLeftPositionresponsive(newValue) + '%',
+                            'right': (100 - calcLeftPositionresponsive(max)) + '%'
+                        });
+                        });
+                        $('#rangeMax-responsive').on('input', function(e) {
+                        const newValue = parseInt(e.target.value);
+                        if (newValue < min) return;
+                        maxresponsive = newValue;
+                        $('#thumbMax-responsive').css('left', calcLeftPositionresponsive(newValue) + '%');
+                        $('#max-responsive').html(newValue + "$");
+                        $('#line-responsive').css({
+                            'left': calcLeftPositionresponsive(min) + '%',
+                            'right': (100 - calcLeftPositionresponsive(newValue)) + '%'
+                        });
+                        });
+                    </script>
+                </div>
+                <div class="filter-dropdown-item5">
+                    <p>Brand Product</p>
+                    <input type="checkbox" name="" id=""><a href="">Aby</a><span> (6)</span><br>
+                    <input type="checkbox" name="" id=""><a href="">Chanel</a><span> (7)</span><br>
+                    <input type="checkbox" name="" id=""><a href="">HM</a><span> (3)</span><br>
+                    <input type="checkbox" name="" id=""><a href="">Zara</a><span> (5)</span><br>
+                    <a href="#">Show More</a>
+                </div>
+                <div class="menu-show-close-filter"><i class="fa-solid fa-xmark"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="shop-list-container">
+        <div class="shop-list-item">
+            <div class="shop-list-item-left">
+                <img src="assets/images/home/product_fashion_19_a_1.jpeg" alt="">
+                <div class="overlay-item3">
+                    <img src="assets/images/home/product_fashion_19_a_2.jpeg" alt="">
+                </div>
+            </div>
+            <div class="shop-list-item-right">
+                <a href="">Long-sleeve Maxi Dress</a>
+                <p>$126.00</p>
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati…</p>
+                <div class="shop-list-item-right-color">
+                    <div class="item-bottom-color">
+                        <div class="color">
+                            <a style="background-color: white;border:1px solid lightgray"></a>
+                        </div>
+                        <div class="tooltip-text">
+                            <span>White</span><i class="fa-solid fa-caret-down"></i>
+                        </div>
+                    </div>
+                    <div class="item-bottom-color">
+                        <div class="color">
+                            <a style="background-color:rgb(143, 107, 7);"></a>
+                        </div>
+                        <div class="tooltip-text">
+                            <span>Brown</span><i class="fa-solid fa-caret-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="shop-list-item-right-foot">
+                    <button>Add to Cart</button>
+                    <div class="item-bottom-color">
+                        <div class="color">
+                            <a><i class="fa-regular fa-star" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="tooltip-text">
+                            <span>Add to Wish List</span><i class="fa-solid fa-caret-down"></i>
+                        </div>
+                    </div>
+                    <div class="item-bottom-color">
+                        <div class="color">
+                            <a><i class="fa fa-code-compare" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="tooltip-text">
+                            <span>Add to Compare</span><i class="fa-solid fa-caret-down"></i>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+       
+    </div>
+    <div class="shop-list-pagination">
+        <a href=""><i class="fa fa-angles-left"></i></a>
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href=""><i class="fa fa-angles-right"></i></a>
     </div>
 
     <!-- info -->
@@ -647,7 +1177,7 @@
             $("#"+contactid).slideToggle();
         })
     </script>
-
+    
     <!-- footer -->
     <footer class="container-fluid">
         <div class="row">

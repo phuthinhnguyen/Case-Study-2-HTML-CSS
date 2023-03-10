@@ -106,6 +106,21 @@ body ::-webkit-scrollbar-thumb:hover {
   margin-left: 10px;
 }
 
+@keyframes navsticky {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.nav-sticky {
+  animation: navsticky 0.5s;
+  transition: transform 0.4s;
+}
+
 nav {
   font-family: "Jost";
   position: sticky;
