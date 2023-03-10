@@ -1296,6 +1296,11 @@ transition: transform 0.4s;
                     .menu-show-item{
                         width: 250px;
                     }
+                    .menu-show-item-dropdown{
+                        .item{
+                            width: 250px;
+                        }
+                    }
                 }
                 .menu-show-close{
                     left: 300px;
@@ -1482,6 +1487,11 @@ transition: transform 0.4s;
                     padding: 10px;
                     .menu-show-item{
                         width: 200px;
+                    }
+                    .menu-show-item-dropdown{
+                        .item{
+                            width: 200px;
+                        }
                     }
                 }
                 .menu-show-close{

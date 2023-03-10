@@ -467,3 +467,116 @@
         }
     }
 }
+@mixin shoptoolbar{
+    @include font($fontJost);
+    max-width: 1680px;
+    margin: auto;
+    margin-top: 30px;
+    .row{
+        padding: 0 20px;
+        .left{
+            display: flex;
+            align-items: center;
+            >a{
+                padding: 5px 20px;
+                background-color: #f2f2f2;
+                border-radius: 3px;
+                transition: .4s;
+                &:hover{
+                    cursor: pointer;
+                    background-color: rgb(224, 224, 224);
+                    color: black;
+                }
+            }
+            >span{
+                font-size: 18px;
+                color: gray;
+                margin-left: 10px;
+            }
+            
+        }
+        .right{
+            display: flex;
+            justify-content: end;
+            .right-item1{
+                display: flex;
+                align-items: center;
+                margin-right: 10px;
+                div:first-of-type{
+                    select{
+                        border: none;
+                        font-weight: 500;
+                        margin-right: 10px;
+                    }
+                }
+                div:last-of-type{
+                    @include item-bottom;
+                    display: inline-block;
+                    margin-top: -14px;
+                    .item-bottom-color{
+                        .color{
+                            a{
+                                background-color: #f2f2f2;
+                                border-radius: 3px;
+                                width: 35px;
+                                height: 30px;
+                                display: inline-block;
+                                text-align: center;
+                                line-height: 30px;
+                               
+                                &:hover{
+                                    cursor: pointer;
+                                    background-color: rgb(224, 224, 224);
+                                    color: black;
+                                    border: none;
+                                    outline: none;
+                                }
+                            } 
+                        }
+                    }
+                   
+                }
+            }
+            .right-item2{
+                display: flex;
+                justify-content: center;
+                .item{
+                    @include item-bottom;
+                    display: inline-block;
+                    margin-top: -30px;
+                    .item-bottom-color{
+                        margin-right: 15px;
+                        .color{
+                            a{
+                                background-color: #f2f2f2;
+                                border-radius: 3px;
+                                width: 35px;
+                                height: 30px;
+                                display: inline-block;
+                                text-align: center;
+                                line-height: 30px;
+                                margin-right: 10px;
+                                &:hover{
+                                    cursor: pointer;
+                                    background-color: black;
+                                    border: none;
+                                    outline: none;
+                                    i{
+                                        color: white;
+                                    }
+                                    svg{
+                                        rect{
+                                            fill: white;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+       
+    }
+}

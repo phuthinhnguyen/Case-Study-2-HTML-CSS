@@ -1639,6 +1639,9 @@ footer .row .last a:hover {
   nav .row .offcanvas-header .menu-show-wrap .menu-show-item {
     width: 250px;
   }
+  nav .row .offcanvas-header .menu-show-wrap .menu-show-item-dropdown .item {
+    width: 250px;
+  }
   nav .row .offcanvas-header .menu-show-close {
     left: 300px;
   }
@@ -1772,6 +1775,9 @@ footer .row .last a:hover {
     padding: 10px;
   }
   nav .row .offcanvas-header .menu-show-wrap .menu-show-item {
+    width: 200px;
+  }
+  nav .row .offcanvas-header .menu-show-wrap .menu-show-item-dropdown .item {
     width: 200px;
   }
   nav .row .offcanvas-header .menu-show-close {
