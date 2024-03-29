@@ -703,6 +703,7 @@ nav .row .right i {
   width: 100%;
   height: auto;
   min-height: 250px;
+  max-height: 800px;
 }
 
 .img-nav {
